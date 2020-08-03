@@ -27,11 +27,11 @@ namespace GeletaApp
         private double _transY;
         private static readonly CompositeDisposable EventSubscriptions2 = new CompositeDisposable();
         private readonly PanGestureRecognizer _panGesture2 = new PanGestureRecognizer();
-        private double _transY2;
+        // private double _transY2;
         private static int i = 1;
         private double pirmo_aukstis;
-        private double pirmo_aukstisM;
-        private double pirmo_max_aukstis;
+        //private double pirmo_aukstisM;
+        //private double pirmo_max_aukstis;
         private double ekranoDydis;
         private double x;
         public string ar_atvirute = "";
@@ -71,15 +71,29 @@ namespace GeletaApp
             ekranoDydis = xamarinHeight;
             popUpStac.HeightRequest = xamarinHeight;
             popUpStac.WidthRequest = xamarinWidth;
-            virsutineJuosta.Padding = new Thickness(xamarinWidth * 4.629 / 100, xamarinHeight * 2.604/ 100, xamarinWidth * 4.629 / 100, 0);
+
+            close_image.Margin = new Thickness(8, 13, 0, 0);
+            shop_bag_image.Margin = new Thickness(0, 15, 8, 0);
+            kiekisKrepselyje.Margin = new Thickness(0, 27, 20, 0);
+            //image.Margin = new Thickness(0, -50, 0, 0);
+
+
+
+
+
+            // virsutineJuosta.Padding = new Thickness(xamarinWidth * 4.629 / 100, xamarinHeight * 2.604 / 100, xamarinWidth * 4.629 / 100, 0);
+
             // imgStack.Padding = new Thickness(0, xamarinHeight * (-130 * 100 / height) / 100, 0, 0);
+
             share.Margin = new Thickness(xamarinWidth * 4.6296 / 100, 0, 0, 0);
             like.Margin = new Thickness(0, 0, xamarinWidth * 4.629 / 100, 0);
             QuickMenuPullLayout.HeightRequest = xamarinHeight;
             QuickMenuPullLayout.WidthRequest = xamarinWidth;
             KlausimuButton.HeightRequest = xamarinHeight * 5.260416 / 100;
+          
             //  not1_stac.Margin = new Thickness(0, 0, 0, xamarinHeight * 2.604 / 100);
             //pirmo_aukstis = QuickMenuPullLayout.HeightRequest * 41.86 / 100;
+           
             editorFrame.Margin = new Thickness(20, 0, -50, 0);
             KrepselioButton.HeightRequest = xamarinHeight * 5.26 / 100;
             KlausimuButton.HeightRequest = xamarinHeight * 5.26 / 100;
@@ -88,63 +102,79 @@ namespace GeletaApp
             cart = DataManipulation_Logic.ReadCart();
             cart_product_amount = cart.Count();
             kiekisKrepselyje.Text = cart_product_amount.ToString();
+            
 
-            //Puokstes nuskaitymas is sqlite ir padavimas duomenu i frontend
-            switch (type)
+            /* pirmo_aukstis = Notification.Height + KrepselioButton.HeightRequest + KlausimuButton.HeightRequest;
+             x = (13.72 + pirmo_aukstis) / this.Height;
+             QuickMenuPullLayout.TranslationY = this.Height * x;*/
+
+            Task.Factory.StartNew(async () =>
             {
-                case 1: // Flowers
-                    using (SQLiteConnection conn = new SQLiteConnection(App.DatabaseLocation))
+                await Task.Delay(100);
+                Device.BeginInvokeOnMainThread(() =>
+                {
+                    //Puokstes nuskaitymas is sqlite ir padavimas duomenu i frontend
+                    switch (type)
                     {
-                        conn.CreateTable<FlowerPost>();
-                        var post = conn.Find<FlowerPost>(selectedProduct);
-                        ChangeLikeImage(post.Favorite);
-                        image.Source = ImageSource.FromStream(() => new MemoryStream(Convert.FromBase64String(post.Image)));
-                        id_product.Text = post.Id.ToString();
-                        type_product.Text = "gele";
-                        pavadinimas.Text = post.Name;
-                        kaina.Text = post.Price.ToString() + " €";
-                        aprasymas.Text = post.Description;
-                       // krepselio_pavadinimas.Text = "GĖLĖ " + post.Name;
+                        case 1: // Flowers
+                            using (SQLiteConnection conn = new SQLiteConnection(App.DatabaseLocation))
+                            {
+                                conn.CreateTable<FlowerPost>();
+                                var post = conn.Find<FlowerPost>(selectedProduct);
+                                ChangeLikeImage(post.Favorite);
+                                image.Source = ImageSource.FromStream(() => new MemoryStream(Convert.FromBase64String(post.Image)));
+                                id_product.Text = post.Id.ToString();
+                                type_product.Text = "gele";
+                                pavadinimas.Text = post.Name;
+                                kaina.Text = post.Price.ToString() + " €";
+                                aprasymas.Text = post.Description;
+                                // krepselio_pavadinimas.Text = "GĖLĖ " + post.Name;
+                            }
+                            break;
+                        case 2: // Bouquets
+                            using (SQLiteConnection conn = new SQLiteConnection(App.DatabaseLocation))
+                            {
+                                conn.CreateTable<BouquetPost>();
+                                var post = conn.Find<BouquetPost>(selectedProduct);
+                                ChangeLikeImage(post.Favorite);
+                                image.Source = ImageSource.FromStream(() => new MemoryStream(Convert.FromBase64String(post.Image)));
+                                id_product.Text = post.Id.ToString();
+                                type_product.Text = "puokste";
+                                pavadinimas.Text = post.Name;
+                                kaina.Text = post.Price.ToString() + " €";
+                                aprasymas.Text = post.Description;
+                                //  krepselio_pavadinimas.Text = "PUOKŠTĖ " + post.Name;
+                            }
+                            break;
+                        case 3: // Home_stuff
+                            using (SQLiteConnection conn = new SQLiteConnection(App.DatabaseLocation))
+                            {
+                                conn.CreateTable<Home_StuffPost>();
+                                var post = conn.Find<Home_StuffPost>(selectedProduct);
+                                ChangeLikeImage(post.Favorite);
+                                image.Source = ImageSource.FromStream(() => new MemoryStream(Convert.FromBase64String(post.Image)));
+                                id_product.Text = post.Id.ToString();
+                                type_product.Text = "kitas";
+                                pavadinimas.Text = post.Name;
+                                kaina.Text = post.Price.ToString() + " €";
+                                aprasymas.Text = post.Description;
+                                //  krepselio_pavadinimas.Text = "AKSESUARAS " + post.Name;
+                            }
+                            break;
                     }
-                    break;
-                case 2: // Bouquets
-                    using (SQLiteConnection conn = new SQLiteConnection(App.DatabaseLocation))
-                    {
-                        conn.CreateTable<BouquetPost>();
-                        var post = conn.Find<BouquetPost>(selectedProduct);
-                        ChangeLikeImage(post.Favorite);
-                        image.Source = ImageSource.FromStream(() => new MemoryStream(Convert.FromBase64String(post.Image)));
-                        id_product.Text = post.Id.ToString();
-                        type_product.Text = "puokste";
-                        pavadinimas.Text = post.Name;
-                        kaina.Text = post.Price.ToString() + " €";
-                        aprasymas.Text = post.Description;
-                      //  krepselio_pavadinimas.Text = "PUOKŠTĖ " + post.Name;
-                    }
-                    break;
-                case 3: // Home_stuff
-                    using (SQLiteConnection conn = new SQLiteConnection(App.DatabaseLocation))
-                    {
-                        conn.CreateTable<Home_StuffPost>();
-                        var post = conn.Find<Home_StuffPost>(selectedProduct);
-                        ChangeLikeImage(post.Favorite);
-                        image.Source = ImageSource.FromStream(() => new MemoryStream(Convert.FromBase64String(post.Image)));
-                        id_product.Text = post.Id.ToString();
-                        type_product.Text = "kitas";
-                        pavadinimas.Text = post.Name;
-                        kaina.Text = post.Price.ToString() + " €";
-                        aprasymas.Text = post.Description;
-                      //  krepselio_pavadinimas.Text = "AKSESUARAS " + post.Name;
-                    }
-                    break;
-            }
+                    CollapseAllMenus();
+                });
+                //await Task.Delay(200);
+            });
+
+            
             editor.Focused += editor_pastabu_Tapped;
             editor.Unfocused += editor_Unfocused;
         }
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            CollapseAllMenus();
+
             InitializeObservables();
         }
         protected override void OnDisappearing()
@@ -156,29 +186,11 @@ namespace GeletaApp
         }
         private void CollapseAllMenus()
         {
-            Task.Factory.StartNew(async () =>
-            {
-                await Task.Delay(200);
-                Device.BeginInvokeOnMainThread(() =>
-                {
-                    pirmo_aukstis = Notification.Height + KrepselioButton.HeightRequest + KlausimuButton.HeightRequest;
-                    x = (13.72 + pirmo_aukstis) / this.Height;  
-                    QuickMenuPullLayout.TranslationY = this.Height * x;
-                   /* if (QuickMenuLayout.Height - Notification.HeightRequest > 0)
-                    pirmo_max_aukstis = QuickMenuLayout.Height - Notification.HeightRequest;
-                    else
-                        pirmo_max_aukstis = Notification.HeightRequest - QuickMenuLayout.Height;
-                    if (QuickMenuPullLayout.TranslationY != 0)
-                        pirmo_aukstis = QuickMenuPullLayout.TranslationY;*/
-                   // Notification2.HeightRequest = this.Height - QuickMenuLayout.Height;
-                 //   QuickMenuPullLayout2.TranslationY = this.Height;
-                //    antro_aukstis = Notification2.Height;
-                    //  antro_max_aukstis = QuickMenuPullLayout2.HeightRequest - Notification2.HeightRequest;
-              //      klausimu_sl.IsVisible = false;
-                });
-            });
+            pirmo_aukstis = Notification.Height + KrepselioButton.HeightRequest + KlausimuButton.HeightRequest;
+            x = (13.72 + pirmo_aukstis) / this.Height;
+            QuickMenuPullLayout.TranslationY = this.Height * x;
         }
-       
+
         private void InitializeObservables()
         {
             //IF THERE IS OBSERVABLES
@@ -208,7 +220,7 @@ namespace GeletaApp
                         Device.BeginInvokeOnMainThread(() =>
                         {
                             QuickMenuPullLayout.TranslationY = Math.Max(120,
-                                Math.Min(pirmo_aukstis+30, QuickMenuPullLayout.TranslationY + e.TotalY));
+                                Math.Min(pirmo_aukstis + 30, QuickMenuPullLayout.TranslationY + e.TotalY));
 
                         });
                     }, 2);
@@ -246,7 +258,7 @@ namespace GeletaApp
         private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
         {
             CollapseAllMenus();
-         //   QuickMenuPullLayout.TranslationY = pirmo_aukstis;
+            //   QuickMenuPullLayout.TranslationY = pirmo_aukstis;
             QuickMenuInnerLayout.IsEnabled = true;
         }
 
@@ -509,13 +521,13 @@ namespace GeletaApp
             KrepselioButton.IsVisible = false;
             klausimuFrame.IsVisible = false;
             //   App.Current.On<Android>().UseWindowSoftInputModeAdjust(WindowSoftInputModeAdjust.Resize);
-            QuickMenuPullLayout.TranslationY = -ekranoDydis/4;
-          //   editorFrame.TranslateTo(0, editorFrame.TranslationY - 150);
+            QuickMenuPullLayout.TranslationY = -ekranoDydis / 4;
+            //   editorFrame.TranslateTo(0, editorFrame.TranslationY - 150);
             //editorFrame.Margin = new Thickness(20, 0, -50, ekranoDydis / 3); //push the entry up to keyboard height when keyboard is activated
 
         }
         private void editor_Unfocused(object sender, FocusEventArgs e)
-        {     
+        {
             KrepselioButton.IsVisible = true;
             klausimuFrame.IsVisible = true;
             QuickMenuPullLayout.TranslationY = 120;
@@ -523,7 +535,7 @@ namespace GeletaApp
             // editorFrame.TranslateTo(0, editorFrame.TranslationY + 150);
             // editorFrame.Margin = new Thickness(20, 0, -50, 0);
         }
-      
+
         private void like_Clicked(object sender, EventArgs e)
         {
             bool check = true;
