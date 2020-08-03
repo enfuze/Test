@@ -63,7 +63,7 @@ namespace GeletaApp
                 string confirmPassword = confirmpasswordEntry.Text;
                 if (password != confirmPassword)
                 {
-                    await DisplayAlert("Klaida", "Slaptažiai nesutampa", "Uždaryti");
+                    await DisplayAlert("Klaida", "Slaptažodžiai nesutampa", "Uždaryti");
                 }
                 else
                 {

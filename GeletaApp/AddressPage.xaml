@@ -105,7 +105,7 @@
                                     Grid.Row="5" 
                                     Grid.Column="1"
                                     x:Name="redAdresa" 
-                                     Margin="10,10,10,0"
+                                    Margin="10,10,10,0"
                                     Text="Redaguoti adresą" 
                                     FontSize="16" 
                                     VerticalOptions="EndAndExpand"
