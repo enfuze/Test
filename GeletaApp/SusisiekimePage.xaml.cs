@@ -60,5 +60,25 @@ namespace GeletaApp
         {
             await App.Current.MainPage.Navigation.PushAsync(new ChatPage());
         }
+        private async void skambinti_Tapped(object sender, EventArgs e)
+        {
+            string number = "+37065062828";
+            try
+            {
+                PhoneDialer.Open(number);
+            }
+            catch (ArgumentNullException anEx)
+            {
+                // Number was null or white space
+            }
+            catch (FeatureNotSupportedException ex)
+            {
+                // Phone Dialer is not supported on this device.
+            }
+            catch (Exception ex)
+            {
+                // Other error has occurred.
+            }
+        }
     }
 }
