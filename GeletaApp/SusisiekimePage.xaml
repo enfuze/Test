@@ -51,14 +51,14 @@
                 "White" Padding="0">
                 <Grid.GestureRecognizers>
                     <TapGestureRecognizer 
-                        x:Name="skambinti"
+                        Tapped="skambinti_Tapped"
                         NumberOfTapsRequired="1" />
                 </Grid.GestureRecognizers>
                 <Label 
                     x:Name="labe1" 
                     Style="{StaticResource menu_label}" 
                     FontFamily="segoeCustom" 
-                    Text="Skambinti +370 612 00 100"/>
+                    Text="Skambinti +370 650 62828"/>
                 <Image 
                     x:Name="arrow1" 
                     Source="back_arrow.png" 

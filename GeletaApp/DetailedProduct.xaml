@@ -6,80 +6,99 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     x:Class="GeletaApp.DetailedProduct"
-    BackgroundColor="Black"
-    xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
-    xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup">
+    BackgroundColor="Black">
 
-    
-    
-    <StackLayout VerticalOptions = "FillAndExpand" x:Name="popUpStac">
-        <Grid x:Name="MainLayout"  BackgroundColor="Black" HorizontalOptions="Center" VerticalOptions="StartAndExpand">
-            <StackLayout HorizontalOptions="CenterAndExpand" BackgroundColor="Black" Padding="0">
+    <StackLayout 
+        x:Name="popUpStac">
+        <Grid >
+            <Image 
+                Grid.Row="0"
+                Grid.ColumnSpan="2"
+                x:Name="image" 
+                Aspect="AspectFill"
+                HeightRequest="600" 
+                WidthRequest="420"
+                HorizontalOptions="FillAndExpand" 
+                BackgroundColor="red" 
+                VerticalOptions="StartAndExpand">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer 
+                        Tapped="TapGestureRecognizer_Tapped"
+                        NumberOfTapsRequired="1"/>
+                </Image.GestureRecognizers>
+            </Image>
+            <ImageButton 
+                x:Name="close_image" 
+                Grid.Row="0" 
+                Grid.Column="0" 
+                Source="close.png" 
+                Clicked="close_image_Clicked" 
+                HeightRequest="30" 
+                BackgroundColor="Transparent" 
+                VerticalOptions="Start"
+                HorizontalOptions="Start"/>
+            <Image
+                Grid.Column="1"
+                Grid.Row="0"
+                x:Name="shop_bag_image" 
+                Source="shopperisBALT50px.png" 
+                HeightRequest="30" 
+                BackgroundColor="Transparent" 
+                HorizontalOptions="End"
+                VerticalOptions="Start">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer 
+                        Tapped="shop_bag_image_Clicked"/>
+                </Image.GestureRecognizers>
+            </Image>
+            <Label 
+                Grid.Column="1"
+                Grid.Row="0"
+                x:Name="kiekisKrepselyje" 
+                TextColor="White" 
+                FontSize="12"
+                FontFamily="segoeCustom"
+                HorizontalTextAlignment="Center" 
+                HorizontalOptions="End" 
+                VerticalOptions="Start" />
 
-                <StackLayout Orientation="Horizontal" x:Name="virsutineJuosta" HorizontalOptions="FillAndExpand" MinimumHeightRequest="30" VerticalOptions="FillAndExpand" BackgroundColor="Black">
-                    
-                    <ImageButton 
-                        x:Name="close_image" 
-                        Grid.Row="0" 
-                        Grid.Column="0" 
-                        Source="close.png" 
-                        Clicked="close_image_Clicked" 
-                        HeightRequest="30" 
-                        BackgroundColor="Black" 
-                        HorizontalOptions="StartAndExpand"/>
-                    <Grid>
-                        <Image
-                        x:Name="shop_bag_image" 
-                        Source="shopperisBALT50px.png" 
-                        HeightRequest="30" 
-                        BackgroundColor="Black" 
-                        HorizontalOptions="End"/>
-                        <Label 
-                            x:Name="kiekisKrepselyje" 
-                            TextColor="White" 
-                            FontSize="12"
-                            FontFamily="segoeCustom"
-                            HorizontalTextAlignment="Center" 
-                            HorizontalOptions="Center" 
-                            VerticalOptions="Center" 
-                            Padding="0,5,0,0"/>
-                        <Grid.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="shop_bag_image_Clicked"/>
-                        </Grid.GestureRecognizers>
-                    </Grid>
-                </StackLayout>
 
-                <StackLayout HeightRequest="600" WidthRequest="420">
-                    <Image 
-                        x:Name="image" 
-                        HorizontalOptions="FillAndExpand" 
-                        BackgroundColor="Black" 
-                        Aspect="AspectFit" 
-                        VerticalOptions="FillAndExpand">
-                        <Image.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" NumberOfTapsRequired="1"/>
-                        </Image.GestureRecognizers>
-                    </Image>
-                </StackLayout>
+            <!-- iki cia reik sutvarkyt-->
 
-            </StackLayout>
-
-            <StackLayout x:Name="QuickMenuPullLayout" HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="Transparent">
+            <StackLayout 
+                Grid.ColumnSpan="2"
+                x:Name="QuickMenuPullLayout" 
+                HorizontalOptions="CenterAndExpand" 
+                VerticalOptions="FillAndExpand" 
+                BackgroundColor="Transparent">
                 <StackLayout.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                    <TapGestureRecognizer 
+                        Tapped="TapGestureRecognizer_Tapped"/>
                 </StackLayout.GestureRecognizers>
-                <Grid x:Name="QuickMenuLayout" VerticalOptions="EndAndExpand" BackgroundColor="Transparent" >
+                <Grid 
+                    x:Name="QuickMenuLayout" 
+                    VerticalOptions="EndAndExpand" 
+                    BackgroundColor="Transparent" >
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
                     </Grid.RowDefinitions>
-                    <Grid x:Name="QuickMenuInnerLayout" Padding="0" HorizontalOptions="Fill" VerticalOptions="FillAndExpand" >
+                    <Grid 
+                        x:Name="QuickMenuInnerLayout" 
+                        Padding="0" 
+                        HorizontalOptions="Fill" 
+                        VerticalOptions="FillAndExpand" >
 
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto"/>
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
 
-                        <StackLayout Orientation="Horizontal" Grid.Row="0" Spacing="0" BackgroundColor="Transparent" x:Name="imgStack">
+                        <StackLayout 
+                            Orientation="Horizontal" 
+                            Grid.Row="0" 
+                            Spacing="0" 
+                            BackgroundColor="Transparent" 
+                            x:Name="imgStack">
                             <ImageButton 
                                 x:Name="share" 
                                 Source="sharekiauras36px.png" 
@@ -98,8 +117,17 @@
                                 BackgroundColor="Transparent"/>
                         </StackLayout>
 
-                        <StackLayout x:Name="not1_stac" Grid.Row="1" VerticalOptions="FillAndExpand" Spacing="0" BackgroundColor="Transparent">
-                            <Frame x:Name="frame1" CornerRadius="20" BackgroundColor="White" VerticalOptions="FillAndExpand">
+                        <StackLayout 
+                            x:Name="not1_stac" 
+                            Grid.Row="1" 
+                            VerticalOptions="FillAndExpand" 
+                            Spacing="0" 
+                            BackgroundColor="Transparent">
+                            <Frame 
+                                x:Name="frame1" 
+                                CornerRadius="20"
+                                BackgroundColor="White" 
+                                VerticalOptions="FillAndExpand">
                                 <StackLayout>
                                     <BoxView 
                                         HeightRequest="1.5" 
@@ -108,7 +136,11 @@
                                         HorizontalOptions="CenterAndExpand" 
                                         VerticalOptions="Start"/>
 
-                                    <Grid x:Name="Notification"  VerticalOptions="FillAndExpand" BackgroundColor="White" Margin="0,0,0,150">
+                                    <Grid 
+                                        x:Name="Notification"  
+                                        VerticalOptions="FillAndExpand" 
+                                        BackgroundColor="White" 
+                                        Margin="0,0,0,150">
                                         <Grid.RowDefinitions>
                                             <RowDefinition Height="Auto"></RowDefinition>
                                             <RowDefinition Height="Auto"></RowDefinition>
@@ -138,35 +170,37 @@
                                             IsVisible="false"/>
                                         <Label 
                                             x:Name="maxima"
-                                            
-                            FontFamily="segoeCustom"
+                                            FontFamily="segoeCustom"
                                             Text="Mūsų parduotuvėje PC HyperMaxima Savanorių pr. 255"
                                             IsVisible="false"/>
                                         <Label 
-                                            
-                            FontFamily="segoeCustom"
+                                            FontFamily="segoeCustom"
                                             x:Name="maxima_pramones"
                                             Text="Mūsų parduotuvėje Pramonės pr. 29, PC Maxima"
                                             IsVisible="false"/>
                                         <Label 
                                             x:Name="namai"
-                                             
-                            FontFamily="segoeCustom"
+                                            FontFamily="segoeCustom"
                                             Text="Pristatymas kurjeriu į vietą"
                                             IsVisible="false"/>
 
-                                        <StackLayout Margin="20,0,0,0" Grid.Row="0" VerticalOptions="Center">
+                                        <StackLayout 
+                                            Margin="20,0,0,0" 
+                                            Grid.Row="0" 
+                                            VerticalOptions="Center">
                                             <Label 
                                                 x:Name="pavadinimas"
                                                 FontFamily="segoeCustom"
                                                 StyleClass="profileLabelCS" TextColor="Black"/>
                                         </StackLayout>
 
-                                        <StackLayout Margin="20,0,0,0" Grid.Row="1" >
+                                        <StackLayout 
+                                            Margin="20,0,0,0" 
+                                            Grid.Row="1" >
                                             <Label 
                                                 x:Name="kaina" 
                                                 FontFamily="segoeCustom"
-                                               StyleClass="profileLabelCS" TextColor="Black"/>
+                                                StyleClass="profileLabelCS" TextColor="Black"/>
                                         </StackLayout>
                                         <Label 
                                             Text="PASIRINKITE KIEKĮ" 
@@ -187,17 +221,25 @@
                                             Clicked="minusButton_Clicked" 
                                             BackgroundColor="White"/>
 
-                                        <StackLayout Margin="3,-7,3,0" VerticalOptions="Start" Grid.Row="2" Grid.Column="2" HeightRequest="30" WidthRequest="30">
-                                            <Grid VerticalOptions="EndAndExpand" x:Name="kiekioGrid">
+                                        <StackLayout 
+                                            Margin="3,-7,3,0" 
+                                            VerticalOptions="Start" 
+                                            Grid.Row="2" 
+                                            Grid.Column="2" 
+                                            HeightRequest="30" 
+                                            WidthRequest="30">
+                                            <Grid 
+                                                VerticalOptions="EndAndExpand" 
+                                                x:Name="kiekioGrid">
                                                 <Image Source="circle32.png"/>
-
-                                                <Label x:Name="kiekisLabel" 
-                                                       Text="1"
-                                                       FontSize="15" 
-                                                       FontFamily="segoeCustom"
-                                                       VerticalOptions="CenterAndExpand" 
-                                                       TextColor="White" 
-                                                       HorizontalOptions="CenterAndExpand"/>
+                                                <Label 
+                                                    x:Name="kiekisLabel" 
+                                                    Text="1"
+                                                    FontSize="15" 
+                                                    FontFamily="segoeCustom"
+                                                    VerticalOptions="CenterAndExpand" 
+                                                    TextColor="White" 
+                                                    HorizontalOptions="CenterAndExpand"/>
                                             </Grid>
                                         </StackLayout>
 
@@ -215,18 +257,19 @@
                                         <StackLayout Margin="20,10,0,0" Grid.Row="3">
                                             <Label
                                                 Text="Aprašymas:‎" 
-                                                
-                            FontFamily="segoeCustom"
-                                                StyleClass="profileLabelCS" TextColor="Black"/>
+                                                FontFamily="segoeCustom"
+                                                StyleClass="profileLabelCS"
+                                                TextColor="Black"/>
                                         </StackLayout>
-
-                                        <StackLayout Margin="20,0,0,0" Grid.Row="4">
+                                        <StackLayout 
+                                            Margin="20,0,0,0"
+                                            Grid.Row="4">
                                             <Label 
                                                 x:Name="aprasymas"
-                                                
-                            FontFamily="segoeCustom"
+                                                FontFamily="segoeCustom"
                                                 LineHeight="1.5" 
-                                               StyleClass="profileLabelCS" TextColor="Black"/>
+                                               StyleClass="profileLabelCS" 
+                                                TextColor="Black"/>
                                         </StackLayout>
 
                                         <StackLayout Margin="20,0,0,0" Grid.Row="6">
@@ -238,32 +281,43 @@
                                                     Margin="0,0,0,0" 
                                                     Color="Black" 
                                                     CheckedChanged="prideti_atvirute_checkbox_CheckedChanged"/>
-
                                                 <Label 
                                                     Text="Pridėti atvirutę" 
                                                     Margin="30,-25,0,0" 
-                                                    
-                            FontFamily="segoeCustom"
-                                                    StyleClass="profileLabelCS" TextColor="Black"/>
+                                                    FontFamily="segoeCustom"
+                                                    StyleClass="profileLabelCS" 
+                                                    TextColor="Black"/>
                                             </FlexLayout>
                                         </StackLayout >
-                                        <StackLayout Margin="20,0,0,0" Grid.Row="7">
+                                        <StackLayout 
+                                            Margin="20,0,0,0" 
+                                            Grid.Row="7">
                                             <Label 
                                                 Text="Pastaba:" 
-                                                
-                            FontFamily="segoeCustom"
-                                                StyleClass="profileLabelCS" TextColor="Black"/>
+                                                FontFamily="segoeCustom"
+                                                StyleClass="profileLabelCS" 
+                                                TextColor="Black"/>
                                         </StackLayout>
 
-                                        <Frame x:Name="editorFrame" VerticalOptions="FillAndExpand" HeightRequest="100" HorizontalOptions="FillAndExpand" BorderColor="LightGray" HasShadow="False" Padding="1"  Grid.Row="8">
+                                        <Frame 
+                                            x:Name="editorFrame" 
+                                            VerticalOptions="FillAndExpand"
+                                            HeightRequest="100" 
+                                            HorizontalOptions="FillAndExpand" 
+                                            BorderColor="LightGray"
+                                            HasShadow="False" 
+                                            Padding="1" 
+                                            Grid.Row="8">
                                             <Editor 
-                                                    x:Name="editor" Keyboard="Chat"
-                                                
-                            FontFamily="segoeCustom"
-                                                    HorizontalOptions="FillAndExpand" MinimumHeightRequest="70"
-                                                    Placeholder="Įrašykite pastabas arba atviruko linkėjimus..." 
-                                                    FontSize="14" VerticalOptions="FillAndExpand"
-                                                   AutoSize="TextChanges"  TextColor="Black"/>
+                                                x:Name="editor" 
+                                                Keyboard="Chat"
+                                                FontFamily="segoeCustom"
+                                                HorizontalOptions="FillAndExpand" 
+                                                MinimumHeightRequest="70"
+                                                Placeholder="Įrašykite pastabas arba atviruko linkėjimus..." 
+                                                FontSize="14" VerticalOptions="FillAndExpand"
+                                                AutoSize="TextChanges"
+                                                TextColor="Black"/>
                                         </Frame>
                                     </Grid>
                                 </StackLayout>
@@ -273,11 +327,19 @@
                 </Grid>
             </StackLayout>
         </Grid>
-
-        <StackLayout VerticalOptions="End" Margin="20,5" BackgroundColor="White">
-            <Frame x:Name="klausimuFrame" BackgroundColor="Black" Padding="1" HasShadow="False" VerticalOptions="CenterAndExpand">
+        <StackLayout
+            VerticalOptions="End" 
+            Margin="20,5" 
+            BackgroundColor="White">
+            <Frame 
+                x:Name="klausimuFrame" 
+                BackgroundColor="Black" 
+                Padding="1" 
+                HasShadow="False" 
+                VerticalOptions="CenterAndExpand">
                 <Button 
-                    x:Name="KlausimuButton" Clicked="KlausimuButton_Clicked"
+                    x:Name="KlausimuButton" 
+                    Clicked="KlausimuButton_Clicked"
                     VerticalOptions="CenterAndExpand"
                     Text="Turite klausimų?" 
                     FontFamily="segoeCustom"
@@ -290,6 +352,5 @@
                 Style="{StaticResource normalButton}" 
                 Clicked="KrepselioButton_Clicked"/>
         </StackLayout>
-            
     </StackLayout>
 </ContentPage>

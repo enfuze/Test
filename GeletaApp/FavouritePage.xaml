@@ -20,75 +20,129 @@
         </ResourceDictionary>
     </ContentPage.Resources>
 
-    <StackLayout HorizontalOptions="Center" Orientation="Vertical" Spacing="0" VerticalOptions="StartAndExpand">
-        <StackLayout x:Name="virsutinis_st" Orientation="Horizontal" VerticalOptions="StartAndExpand" BackgroundColor="White" HorizontalOptions="EndAndExpand">
-            <StackLayout x:Name="paieska_main_st" Orientation="Horizontal" VerticalOptions="StartAndExpand">
-                <StackLayout x:Name="paieskos_st" Orientation="Vertical" Spacing="0" VerticalOptions="EndAndExpand" HorizontalOptions="EndAndExpand" BackgroundColor="Transparent">
-                    <templates:MyEntry  x:Name="paieskos_juostos_entry" TextColor="Black"
-                     HorizontalTextAlignment="Start"
-                     VerticalOptions="Center" 
-                     FontFamily="segoeCustom"
-                     VerticalTextAlignment="Center"
-                 BackgroundColor="Transparent"
-                HorizontalOptions="FillAndExpand"
-                  />
-                    <BoxView x:Name="paieskos_linija"
-                         VerticalOptions="Center"
-                    HeightRequest="1" 
-                    BackgroundColor="Black" 
-                    HorizontalOptions="Fill" 
-                    />
+    <StackLayout 
+        HorizontalOptions="Center" 
+        Orientation="Vertical" 
+        Spacing="0" 
+        VerticalOptions="StartAndExpand">
+        <StackLayout 
+            x:Name="virsutinis_st"
+            Orientation="Horizontal" 
+            VerticalOptions="StartAndExpand" 
+            BackgroundColor="White" 
+            HorizontalOptions="EndAndExpand">
+            <StackLayout 
+                x:Name="paieska_main_st" 
+                Orientation="Horizontal"
+                VerticalOptions="StartAndExpand">
+                <StackLayout 
+                    x:Name="paieskos_st" 
+                    Orientation="Vertical" 
+                    Spacing="0" 
+                    VerticalOptions="EndAndExpand" 
+                    HorizontalOptions="EndAndExpand" 
+                    BackgroundColor="Transparent">
+                    <templates:MyEntry  
+                        x:Name="paieskos_juostos_entry" 
+                        TextColor="Black"
+                        HorizontalTextAlignment="Start"
+                        VerticalOptions="Center" 
+                        FontFamily="segoeCustom"
+                        VerticalTextAlignment="Center"
+                        BackgroundColor="Transparent"
+                        HorizontalOptions="FillAndExpand"/>
+                    <BoxView 
+                        x:Name="paieskos_linija"
+                        VerticalOptions="Center"
+                        HeightRequest="1" 
+                        BackgroundColor="Black" 
+                        HorizontalOptions="Fill"/>
                 </StackLayout>
-                <Label x:Name="paieska" Text="PAIEŠKA"
-                       VerticalTextAlignment="End"
-                       BackgroundColor="Transparent" 
-                       FontFamily="segoeCustom"
-                       VerticalOptions="FillAndExpand" Padding="0,0,0,-3"
-                       TextColor="Black" 
-                HorizontalOptions="EndAndExpand">
+                <Label
+                    x:Name="paieska" 
+                    Text="PAIEŠKA"
+                    VerticalTextAlignment="End"
+                    BackgroundColor="Transparent" 
+                    FontFamily="segoeCustom"
+                    VerticalOptions="FillAndExpand" 
+                    Padding="0,0,0,-3"
+                    TextColor="Black" 
+                    HorizontalOptions="EndAndExpand">
                     <Label.GestureRecognizers>
-                        <TapGestureRecognizer x:Name="isekoti_tap"
-                    Tapped="isekoti_tap_Tapped"
-                    NumberOfTapsRequired="1" />
+                        <TapGestureRecognizer 
+                            x:Name="isekoti_tap"
+                            Tapped="isekoti_tap_Tapped"
+                            NumberOfTapsRequired="1" />
                     </Label.GestureRecognizers>
                 </Label>
             </StackLayout>
             <Grid>
-                <Image x:Name="shop_img" HorizontalOptions="End" Source="shopperis50px.png" VerticalOptions="End" BackgroundColor="Transparent" />
-                <Label x:Name="kiekisKrepselyje" Text="0" TextColor="Black" FontSize="12" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="EndAndExpand"/>
+                <Image 
+                    x:Name="shop_img" 
+                    HorizontalOptions="End" 
+                    Source="shopperis50px.png"
+                    VerticalOptions="End" 
+                    BackgroundColor="Transparent" />
+                <Label 
+                    x:Name="kiekisKrepselyje" 
+                    Text="0" TextColor="Black" 
+                    FontSize="12" 
+                    HorizontalTextAlignment="Center" 
+                    HorizontalOptions="Center" 
+                    VerticalOptions="EndAndExpand"/>
                 <Grid.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="shop_img_Clicked"/>
+                    <TapGestureRecognizer 
+                        Tapped="shop_img_Clicked"/>
                 </Grid.GestureRecognizers>
             </Grid>
         </StackLayout>
 
-        <ScrollView x:Name="scroll" Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
-            <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="StartAndExpand">
+        <ScrollView 
+            x:Name="scroll" 
+            Orientation="Vertical" 
+            HorizontalOptions="FillAndExpand" 
+            VerticalOptions="Start">
+            <StackLayout 
+                HorizontalOptions="CenterAndExpand" 
+                VerticalOptions="StartAndExpand">
 
-                <Label x:Name="puoktes_label" Text="MĖGSTAMIAUSI"
-                        CharacterSpacing="1.13"
-                   TextColor="Black"
-                   FontFamily="segoeCustom"
-                   HorizontalOptions="CenterAndExpand" VerticalOptions="Start" />
-                <Label x:Name="pranesimas" HorizontalOptions="CenterAndExpand"
-                       Text="Jūs neturite mėgstamiausių prekių" FontSize="Medium" Margin="0,50,0,0"
-                       IsVisible="false"/>
+                <Label 
+                    x:Name="puoktes_label" 
+                    Text="MĖGSTAMIAUSI"
+                    CharacterSpacing="1.13"
+                    TextColor="Black"
+                    FontFamily="segoeCustom"
+                    HorizontalOptions="CenterAndExpand" 
+                    VerticalOptions="Start" />
+                <Label 
+                    x:Name="pranesimas" 
+                    HorizontalOptions="CenterAndExpand"
+                    Text="Jūs neturite mėgstamiausių prekių"
+                    FontSize="Medium" 
+                    Margin="0,50,0,0"
+                    IsVisible="false"/>
 
-                <CollectionView x:Name="FavouriteList" 
-                                VerticalOptions="EndAndExpand" 
-                                BackgroundColor="Transparent" >
+                <CollectionView 
+                    x:Name="FavouriteList" 
+                    VerticalOptions="EndAndExpand" 
+                    BackgroundColor="Transparent" >
 
                     <CollectionView.ItemsLayout>
-                        <GridItemsLayout Orientation="Vertical" x:Name="grid_layout" VerticalItemSpacing="20"
-                                     Span="2"/>
+                        <GridItemsLayout 
+                            Orientation="Vertical" 
+                            x:Name="grid_layout" 
+                            VerticalItemSpacing="20"
+                            Span="2"/>
                     </CollectionView.ItemsLayout>
 
                     <CollectionView.ItemTemplate>
-                        <DataTemplate  x:Name="dataTemple">
+                        <DataTemplate 
+                            x:Name="dataTemple">
                             <Grid>
                                 <Grid.Resources>
                                     <ResourceDictionary>
-                                        <helpers:ConverterBase64ImageSource x:Key="Base64ToImageConverter" />
+                                        <helpers:ConverterBase64ImageSource 
+                                            x:Key="Base64ToImageConverter" />
                                     </ResourceDictionary>
                                 </Grid.Resources>
                                 <Grid.RowDefinitions>
@@ -99,11 +153,12 @@
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition x:Name="nulinis_stulpelis"/>
                                 </Grid.ColumnDefinitions>
-                                <Image Grid.Row="0" 
-                                   Source="{Binding Product_image, Converter={StaticResource Base64ToImageConverter}}"
-                                   Aspect="AspectFill"                                    
-                                   VerticalOptions="FillAndExpand" 
-                                   HorizontalOptions="FillAndExpand">
+                                <Image
+                                    Grid.Row="0" 
+                                    Source="{Binding Product_image, Converter={StaticResource Base64ToImageConverter}}"
+                                    Aspect="AspectFill"    
+                                    VerticalOptions="FillAndExpand" 
+                                    HorizontalOptions="FillAndExpand">
                                 </Image>
                                 <ImageButton 
                                     x:Name="heartg" 
