@@ -1,0 +1,20 @@
+﻿using SQLite;
+
+namespace GeletaApp.Model
+{
+    public class BouquetPost
+    {
+        // atributai iš didžiųjų raidžių kad eitų atskirt.
+        [PrimaryKey]
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public int Quantity { get; set; }
+        public double Price { get; set; }
+        public string Description { get; set; }
+        public string Image { get; set; }
+        public string Image_sh { get; set; }
+        public int Discount { get; set; }
+        public int Gender { get; set; }
+        public bool Favorite { get; set; }
+    }
+}

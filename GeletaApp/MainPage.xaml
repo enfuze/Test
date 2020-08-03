@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:templates="clr-namespace:GeletaApp;assembly=GeletaApp" 
+    xmlns:model="clr-namespace:GeletaApp.Model"
+    mc:Ignorable="d"
+    x:Class="GeletaApp.MainPage"
+    BackgroundColor="White"
+    x:Name="main_cp">
+    <StackLayout 
+        Padding="0" 
+        HorizontalOptions="CenterAndExpand" 
+        VerticalOptions="StartAndExpand">
+        <Image 
+            x:Name="iconImage"
+            Source="geleta_logo.png" 
+            Aspect="AspectFit" 
+            HorizontalOptions="Center" 
+            BackgroundColor="Transparent"/>
+
+        <StackLayout 
+            x:Name="virsutinis_st" 
+            Orientation="Horizontal" 
+            VerticalOptions="StartAndExpand" 
+            BackgroundColor="White" 
+            HorizontalOptions="EndAndExpand">
+            <StackLayout 
+                x:Name="paieska_main_st"
+                Orientation="Horizontal" 
+                VerticalOptions="FillAndExpand">
+                <StackLayout 
+                    x:Name="paieskos_st"
+                    Orientation="Vertical" 
+                    Spacing="0" 
+                    VerticalOptions="EndAndExpand" 
+                    HorizontalOptions="EndAndExpand" 
+                    BackgroundColor="Transparent">
+                    <templates:MyEntry  
+                        x:Name="paieskos_juostos_entry" 
+                        TextColor="Black"
+                        HorizontalTextAlignment="Start"
+                        VerticalOptions="Center" 
+                        FontFamily="segoeCustom"
+                        VerticalTextAlignment="Center"
+                        BackgroundColor="Transparent"
+                        HorizontalOptions="FillAndExpand" />
+                    <BoxView 
+                        x:Name="paieskos_linija"
+                        VerticalOptions="Center"
+                        HeightRequest="1" 
+                        BackgroundColor="Black" 
+                        HorizontalOptions="Fill"/>
+                </StackLayout>
+                <Label 
+                    x:Name="paieska" 
+                    Text="PAIEŠKA"
+                    VerticalTextAlignment="End"
+                    BackgroundColor="Transparent" 
+                    FontFamily="segoeCustom"
+                    VerticalOptions="FillAndExpand" 
+                    Padding="0,0,0,-3"
+                    TextColor="Black" 
+                    HorizontalOptions="EndAndExpand">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer 
+                            x:Name="isekoti_tap"
+                            Tapped="isekoti_tap_Tapped"
+                            NumberOfTapsRequired="1" />
+                    </Label.GestureRecognizers>
+                </Label>
+            </StackLayout>
+            <Grid>
+            <Image 
+                x:Name="shop_img" 
+                HorizontalOptions="End" 
+                Source="shopperis50px.png" 
+                VerticalOptions="End" 
+                BackgroundColor="Transparent" />
+            <Label 
+                x:Name="kiekisKrepselyje" 
+                TextColor="Black" 
+                FontSize="12"
+                FontFamily="segoeCustom" 
+                HorizontalTextAlignment="Start" 
+                VerticalTextAlignment="Center" 
+                HorizontalOptions="Center" 
+                VerticalOptions="End"
+                Padding="1,0,0,1"/>
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="shop_img_Clicked"/>
+                </Grid.GestureRecognizers>
+            </Grid>
+        </StackLayout>
+
+        <ScrollView 
+            x:Name="main_scroll" 
+            Orientation="Vertical" 
+            HorizontalOptions="CenterAndExpand"
+            VerticalOptions="StartAndExpand" 
+            BackgroundColor="Transparent">
+            <StackLayout 
+                Orientation="Vertical"  
+                VerticalOptions="Start" 
+                HorizontalOptions="CenterAndExpand"
+                BackgroundColor="Transparent">
+                <Frame 
+                    x:Name="frame0" 
+                    Padding="0" 
+                    HorizontalOptions="CenterAndExpand" 
+                    HasShadow="False">
+                    <StackLayout Orientation="Vertical">
+                        <Image 
+                            x:Name="image1" 
+                            Source="gele.jpg" 
+                            Aspect="AspectFill" >
+                        </Image>
+                        <Label 
+                            x:Name="main_label" 
+                            LineBreakMode="WordWrap"
+                            Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                            TextColor="Black"
+                            FontSize="15" 
+                            VerticalOptions="StartAndExpand"
+                            FontFamily="segoeCustom"
+                            HorizontalTextAlignment="Start"/>
+                    </StackLayout>
+                </Frame>
+                <Frame
+                    x:Name="frame1" 
+                    Padding="0" 
+                    HorizontalOptions="CenterAndExpand" 
+                    HasShadow="False">
+                    <StackLayout Orientation="Vertical">
+                        <Image 
+                            x:Name="image2"
+                            Source="gelyte4.jpg" 
+                            Aspect="AspectFill" >
+                        </Image>
+                        <ScrollView Orientation="Vertical">
+                            <Label 
+                                x:Name="main_label2" 
+                                LineBreakMode="WordWrap"
+                                Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                                TextColor="Black"
+                                FontSize="15" 
+                                VerticalOptions="StartAndExpand"
+                                FontFamily="segoeCustom"
+                                HorizontalTextAlignment="Start"/>
+                        </ScrollView>
+                    </StackLayout>
+                </Frame>
+                <Frame 
+                    Padding="0" 
+                    x:Name="frame2" 
+                    HorizontalOptions="CenterAndExpand" 
+                    HasShadow="False">
+                    <StackLayout Orientation="Vertical">
+                        <Image 
+                            x:Name="image3" 
+                            Source="gelyte3.jpg"
+                            Aspect="AspectFill" 
+                            HorizontalOptions="FillAndExpand">
+                        </Image>
+                        <ScrollView Orientation="Vertical">
+                            <Label 
+                                x:Name="main_label3"
+                                LineBreakMode="WordWrap"
+                                Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                                TextColor="Black"
+                                FontSize="15" 
+                                VerticalOptions="StartAndExpand"
+                                FontFamily="segoeCustom"
+                                HorizontalTextAlignment="Start"/>
+                        </ScrollView>
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+        </ScrollView>
+        <templates:CustomMenu x:Name="customMenu"/>
+    </StackLayout>
+</ContentPage>

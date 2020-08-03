@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:controls="clr-namespace:GeletaApp.Controls" xmlns:geletaapp="clr-namespace:GeletaApp"
+             x:Class="GeletaApp.Views.Partials.ChatInputBarView" VerticalOptions="EndAndExpand" BackgroundColor="White">
+
+    <StackLayout Orientation="Horizontal" x:Name="stack">
+
+        <Image x:Name="prideti" Source="plus.png" BackgroundColor="White" VerticalOptions="Center" HorizontalOptions="Center">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer x:Name="pridetiGest"
+                      Tapped="pridetiGest_Tapped"/>
+            </Image.GestureRecognizers>
+        </Image>
+
+        <Editor x:Name="chatTextInput" AutoSize="TextChanges"
+                 Text="{Binding TextToSend}" 
+                 Margin="0"  
+                 TextColor="Black" 
+                 Keyboard="Chat"  
+                 HorizontalOptions="FillAndExpand" 
+                 PlaceholderColor="LightGray"
+                 Placeholder="Rašyti žinutę..."
+                FontFamily="segoeCustom"
+                />
+        <Label Text="SIŲSTI"
+               x:Name="siusti"
+               VerticalTextAlignment="Center"
+               FontFamily="segoeCustom">
+            <Label.GestureRecognizers> 
+                <TapGestureRecognizer
+                      Command="{Binding OnSendCommand}"
+                      Tapped="Handle_Completed"/>
+           </Label.GestureRecognizers>
+       </Label>
+    </StackLayout>
+</ContentView>

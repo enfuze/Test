@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="GeletaApp.App">
+    <Application.Resources>
+        <ResourceDictionary>
+            <Color x:Key="pilka">#f2f2f2</Color>
+            <Color x:Key="rausva">#F7E3E3</Color>
+            <Style x:Key="normalButton" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="Black"/>
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="HeightRequest" Value="33.66"/>
+                <Setter Property="FontFamily" Value="segoeCustom"/>
+                <Setter Property="Padding" Value="0"/>
+
+            </Style>
+
+            <Style x:Key="registerButton" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="White"/>
+                <Setter Property="TextColor" Value="Black"/>
+                <Setter Property="HeightRequest" Value="33.66"/>
+                <Setter Property="FontFamily" Value="segoeCustom"/>
+                <Setter Property="Padding" Value="0"/>
+
+            </Style>
+
+            <Style x:Key="Frame" TargetType="Frame">
+                <Setter Property="WidthRequest" Value="300"/>
+                <Setter Property="HeightRequest" Value="500"/>
+                <Setter Property="Margin" Value="10"/>
+               
+            </Style>
+            <Style x:Key="profileLabel" TargetType="Label">
+                <Setter Property ="Margin" Value="20,10"/>
+                <Setter Property ="TextColor" Value="Black"/>
+                <Setter Property ="FontSize" Value="15"/>
+                <Setter Property ="FontAttributes" Value="Bold"/>
+                <Setter Property="FontFamily" Value="segoeCustom"/>
+            </Style>
+
+            <Style x:Key="images" TargetType="Image">
+                <Setter Property ="HeightRequest" Value="210"/>
+                <Setter Property ="WidthRequest" Value="180"/>
+                <Setter Property ="Aspect" Value="AspectFill"/>
+            </Style>
+
+            <Style x:Key="pavadinimas" TargetType="Label">
+                <Setter Property ="HorizontalOptions" Value="Center"/>
+                <Setter Property ="TextColor" Value="Black"/>
+                <Setter Property="FontFamily" Value="segoeCustom"/>
+
+            </Style>
+
+            <Style x:Key="scroll_pav" TargetType="Label">
+                <Setter Property ="HorizontalOptions" Value="Start"/>
+                <Setter Property ="Margin" Value="20,0,0,0"/>
+                <Setter Property ="TextColor" Value="Black"/>
+                <Setter Property="FontFamily" Value="segoeCustom"/>
+                <Setter Property="FontSize" Value="15"/>
+
+            </Style>
+            <Style x:Key="email_entry" TargetType="Entry">
+                <Setter Property ="BackgroundColor" Value="#f2f2f2"/>
+                <Setter Property ="HeightRequest" Value="40"/>
+                <Setter Property ="TextColor" Value="Black"/>
+                <Setter Property ="Keyboard" Value="Email"/>
+                <Setter Property ="FontSize" Value="14"/>
+                <Setter Property="FontFamily" Value="segoeCustom"/>
+
+            </Style>
+            <Style x:Key="password_entry" TargetType="Entry">
+                <Setter Property ="BackgroundColor" Value="#f2f2f2"/>
+                <Setter Property ="HeightRequest" Value="40"/>
+                <Setter Property ="TextColor" Value="Black"/>
+                <Setter Property ="IsPassword" Value="True"/>
+                <Setter Property ="FontSize" Value="14"/>
+                <Setter Property="FontFamily" Value="segoeCustom"/>
+
+            </Style>
+
+            <Style x:Key="menu_label" TargetType="Label">
+                <Setter Property ="BackgroundColor" Value="White"/>
+                <Setter Property ="TextColor" Value="Black"/>
+                <Setter Property ="FontSize" Value="18"/>
+                <Setter Property ="HorizontalOptions" Value="Start"/>
+                <Setter Property ="VerticalOptions" Value="CenterAndExpand"/>
+                <Setter Property="FontFamily" Value="segoeCustom"/>
+
+            </Style>
+
+            <Style x:Key="profilio_label" TargetType="Label">
+                <Setter Property ="TextColor" Value="Black"/>
+                <Setter Property ="FontFamily" Value="segoeCustom"/>
+                <Setter Property ="FontSize" Value="14"/>
+            </Style>
+
+            <Style x:Key="adresai" TargetType="Label">
+                <Setter Property ="HorizontalOptions" Value="Start"/>
+                <Setter Property ="Margin" Value="32,0,0,0.5"/>
+                <Setter Property ="TextColor" Value="Black"/>
+                <Setter Property="FontFamily" Value="segoeCustom"/>
+                <Setter Property="FontSize" Value="17" />
+
+            </Style>
+            <Style x:Key="isskleisti" TargetType="Image">
+                <Setter Property="Source" Value="collapsed_grey.png"/>
+                <Setter Property="HorizontalOptions" Value="EndAndExpand"/>
+            </Style>
+
+            <Style x:Key="grizti_atgal" TargetType="Label">
+                <Setter Property ="VerticalTextAlignment" Value="Center"/>
+                <Setter Property ="Margin" Value="10,0"/>
+                <Setter Property ="TextColor" Value="Black"/>
+                <Setter Property="FontFamily" Value="segoeCustom"/>
+                <Setter Property="FontSize" Value="17" />
+            </Style>
+
+            <Style x:Key="grizti_atgal_img" TargetType="Image">
+                <Setter Property ="VerticalOptions" Value="Start"/>
+                <Setter Property ="HorizontalOptions" Value="Start"/>
+                <Setter Property ="RotationY" Value="180"/>
+                <Setter Property ="BackgroundColor" Value="White"/>
+                <Setter Property="Source" Value="back_arrow.png" />
+            </Style>
+            <Style x:Key="sutraukti_img" TargetType="Image">
+                <Setter Property ="VerticalOptions" Value="Start"/>
+                <Setter Property ="HorizontalOptions" Value="Start"/>
+                <Setter Property ="BackgroundColor" Value="White"/>
+                <Setter Property="Source" Value="back_arrow.png" />
+            </Style>
+        </ResourceDictionary>
+
+    </Application.Resources>
+</Application>

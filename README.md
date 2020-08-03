@@ -1,2 +1,0 @@
-# GeletaApp
- Barbora for flowers

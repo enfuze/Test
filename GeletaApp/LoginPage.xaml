@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:local="clr-namespace:GeletaApp"
+    mc:Ignorable="d"
+    x:Class="GeletaApp.LoginPage"
+    BackgroundColor="White"
+    x:Name="loginCP">
+       <ScrollView Orientation="Vertical">
+           <StackLayout VerticalOptions="Fill" x:Name="loginST">
+
+                <Image x:Name="logas"
+                    Source="naujaslogo.png" 
+                    />
+                <Label x:Name="prisijungti_naudojant"
+                    Text="PRISIJUNGTI NAUDOJANT"
+                    TextColor="Black"
+                    CharacterSpacing="1.13" 
+                    HorizontalTextAlignment="Center"
+                    FontFamily="segoeCustom"/>
+                <Label 
+                    Text="El. paštas" 
+                    x:Name="el_pastas" 
+                    VerticalTextAlignment="End"
+                    TextColor="Black" 
+                    FontFamily="segoeCustom"/>
+                <local:MyEntry 
+                    x:Name="emailEntry" 
+                    Style="{StaticResource email_entry}" 
+                    FontFamily="segoeCustom"/>
+                <Label 
+                    Text="Slaptažodis" 
+                    VerticalTextAlignment="End"
+                    TextColor="Black" 
+                    x:Name="slaptazodisLabel"
+                    FontFamily="segoeCustom"/>
+                <local:MyEntry 
+                    x:Name="passwordEntry" 
+                    Style="{StaticResource password_entry}" 
+                    FontFamily="segoeCustom"/>
+            <Label 
+                Text="Pamiršau slaptažodį" 
+                TextColor="Black" 
+                VerticalTextAlignment="End"
+                HorizontalTextAlignment="Center" 
+                x:Name="pamirsauSlap"
+                FontFamily="segoeCustom">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer x:Name="primintiSlap" Tapped="primintiSlap_Tapped"/>
+                </Label.GestureRecognizers>
+            </Label>
+
+            <Label 
+                Text="ARBA" 
+                x:Name="arbaLabel" 
+                TextColor="Black"
+                HorizontalTextAlignment="Center"
+                FontFamily="segoeCustom"/>
+                <Grid x:Name="grid">
+                    <ImageButton 
+                        x:Name="google"
+                        Grid.Column="0" 
+                        Source="google.png" 
+                        BackgroundColor="White" 
+                        Aspect="AspectFit" 
+                        HorizontalOptions="Start"/>
+                    <ImageButton 
+                        x:Name="facebook"
+                        Grid.Column="1"
+                        Source="Facebook.png" 
+                        BackgroundColor="White" 
+                        Aspect="AspectFit" 
+                        HorizontalOptions="End"/>
+                </Grid>
+                <Frame x:Name="frame1"
+                    BackgroundColor="{StaticResource pilka}" 
+                    Padding="1" >
+                    <Button 
+                        x:Name="LoginButton" 
+                        Text="Prisijungti" 
+                        HorizontalOptions="FillAndExpand"
+                        Clicked="LoginButton_Clicked"
+                        Style="{StaticResource registerButton}"
+                        FontFamily="segoeCustom"/>
+                </Frame>
+                <Frame 
+                    BackgroundColor="{StaticResource pilka}" 
+                    Padding="1" x:Name="frame2">
+                    <Button 
+                        HorizontalOptions="FillAndExpand" 
+                        BackgroundColor="White"
+                        x:Name="RegisterButton"
+                        Text="Registruotis" 
+                        Style="{StaticResource registerButton}"
+                        Clicked="RegisterButton_Clicked" 
+                        FontFamily="segoeCustom"/>
+                </Frame>
+
+        </StackLayout> </ScrollView>
+</ContentPage>

@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps" xmlns:local="clr-namespace:GeletaApp"
+             mc:Ignorable="d"
+             x:Class="GeletaApp.MapPage" x:Name="mapPage"   BackgroundColor="White" >
+    <StackLayout>
+        <StackLayout Orientation="Horizontal" >
+            
+            <StackLayout.GestureRecognizers>
+                <TapGestureRecognizer
+                    Tapped="BackImgButton_Clicked"
+                    NumberOfTapsRequired="1" />
+            </StackLayout.GestureRecognizers>
+            
+            <Image x:Name="BackImgButton3" Style="{StaticResource grizti_atgal_img}" VerticalOptions="Start"/>
+            <Label x:Name="parduotuves" Text="Parduotuvės"  Style="{StaticResource grizti_atgal}" VerticalOptions="CenterAndExpand"/>
+            
+        </StackLayout>
+        <StackLayout x:Name="sarasoStack">
+            
+            <Label x:Name="studijos" Text="MŪSŲ STUDIJAS RASITE KAUNE" FontAttributes="Bold" Padding="0,0,0,10" Style="{StaticResource scroll_pav}"/>
+            <Label x:Name="savanoriu" Text="Savanorių pr. 255, HyperMaxima +37065062828 Lina"  Style="{StaticResource scroll_pav}"/>
+            <Label x:Name="pramones" Text="Pramonės pr. 29, PC &quot;Maxima&quot;, +37065062828 Lina"  Style="{StaticResource scroll_pav}"/>
+            
+        </StackLayout>
+
+        <maps:Map x:Name="map" >
+            <x:Arguments>
+                <maps:MapSpan>
+                    <x:Arguments>
+                        <maps:Position>
+                            <x:Arguments>
+                                <x:Double>54.9159759</x:Double>
+                                <x:Double>23.9185157</x:Double>
+                            </x:Arguments>
+                        </maps:Position>
+                        <x:Double>0.2</x:Double>
+                        <x:Double>0.1</x:Double>
+                    </x:Arguments>
+                </maps:MapSpan>
+            </x:Arguments>
+        </maps:Map>
+        <local:CustomMenu x:Name="customMenu" VerticalOptions="End"/>
+    </StackLayout>
+</ContentPage>

@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<StackLayout xmlns="http://xamarin.com/schemas/2014/forms"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GeletaApp.CustomMenu"
+                 BackgroundColor="White" Orientation="Horizontal" 
+               VerticalOptions="EndAndExpand" HorizontalOptions="FillAndExpand" x:Name="menu_sl">
+    <StackLayout BackgroundColor="White" x:Name="CustomToolBarItem" Orientation="Horizontal" 
+               VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand" Padding="0">
+        <StackLayout Orientation="Vertical" HorizontalOptions="Start"  >
+            <StackLayout.GestureRecognizers>
+                <TapGestureRecognizer
+                Tapped="puokste_img_Clicked"
+                NumberOfTapsRequired="1" />
+            </StackLayout.GestureRecognizers>
+            <Image x:Name="puokste_img"  Source="puokstes50px.png" BackgroundColor="White" HorizontalOptions="Center" VerticalOptions="EndAndExpand"/>
+            <Label x:Name="puokstes_label" Text="PUOKŠTĖS" FontFamily="segoeCustom" FontAttributes="Bold" HorizontalTextAlignment="Center" />
+        </StackLayout>
+        <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand" >
+            <StackLayout.GestureRecognizers>
+                <TapGestureRecognizer Tapped="tulip_img_Clicked" NumberOfTapsRequired="1"/>
+            </StackLayout.GestureRecognizers>
+            <Image x:Name="tulip_img" Source="skintos_geles50px.png"  BackgroundColor="White" HorizontalOptions="CenterAndExpand" VerticalOptions="EndAndExpand"/>
+            <Label x:Name="tulpes_label" Text="SKINTOS GĖLĖS" FontFamily="segoeCustom" FontAttributes="Bold" HorizontalTextAlignment="Center" />
+        </StackLayout>
+        <StackLayout Orientation="Vertical" HorizontalOptions="Center" >
+            <StackLayout.GestureRecognizers>
+                <TapGestureRecognizer Tapped="kitos_Clicked" NumberOfTapsRequired="1"/>
+            </StackLayout.GestureRecognizers>
+            <Image x:Name="kitos_img" Source="ktprekes50px.png"  BackgroundColor="White" HorizontalOptions="CenterAndExpand" VerticalOptions="EndAndExpand"/>
+            <Label x:Name="kitos_label" Text="KITOS PREKĖS" FontFamily="segoeCustom" FontAttributes="Bold" HorizontalTextAlignment="Center" />
+        </StackLayout>
+        <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand"  >
+            <StackLayout.GestureRecognizers>
+                <TapGestureRecognizer Tapped="profile_img_Clicked" NumberOfTapsRequired="1"/>
+            </StackLayout.GestureRecognizers>
+            <Image x:Name="profile_img" Source="profilis50px.png" BackgroundColor="White"  HorizontalOptions="CenterAndExpand" VerticalOptions="EndAndExpand"/>
+            <Label x:Name="profilio_label" Text="PROFILIS" FontFamily="segoeCustom" FontAttributes="Bold" HorizontalTextAlignment="Center" />
+        </StackLayout>
+        <StackLayout Orientation="Vertical" HorizontalOptions="End" >
+            <StackLayout.GestureRecognizers>
+                <TapGestureRecognizer Tapped="menu_Clicked" NumberOfTapsRequired="1"/>
+            </StackLayout.GestureRecognizers>
+            <Image x:Name="menu" Source="meniu50px.png" BackgroundColor="White"  HorizontalOptions="CenterAndExpand" VerticalOptions="EndAndExpand"/>
+            <Label x:Name="meniu_label" Text="MENIU" FontFamily="segoeCustom"  FontAttributes="Bold" HorizontalTextAlignment="Center" />
+        </StackLayout>
+    </StackLayout>
+</StackLayout>

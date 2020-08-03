@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ViewCell xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="GeletaApp.Views.Cells.OutgoingViewCell">
+    <Grid x:Name="gridas" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+       
+        </Grid.ColumnDefinitions>
+        <Label Text="12:00" Grid.Row="0" Grid.Column="1" Rotation="180" HorizontalOptions="Center" x:Name="laikas" FontFamily="segoeCustom" IsVisible="false"/>
+        <Frame  x:Name="zinute" BackgroundColor="#F7E3E3" Padding="10"
+            Grid.Column="1" Grid.Row="1"
+            Rotation="180" CornerRadius="12"
+            FlowDirection="LeftToRight"
+            HasShadow="false">
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer x:Name="zinuteTap"
+                                      Tapped="zinuteTap_Tapped"/>
+            </Frame.GestureRecognizers>
+            <Label Text="{Binding Text}"
+                  TextColor="Gray" FontFamily="segoeCustom" x:Name="outg" Grid.Column="1" Grid.Row="1" LineBreakMode="WordWrap"/>
+        </Frame>
+    </Grid>
+</ViewCell>

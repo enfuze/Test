@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:local="clr-namespace:GeletaApp" 
+    xmlns:expandable="clr-namespace:Expandable"
+    mc:Ignorable="d"
+    x:Class="GeletaApp.DUKPage" 
+    BackgroundColor="White" 
+    x:Name="duk_cp">
+    <StackLayout x:Name="duk_st">
+        <StackLayout 
+            Orientation="Horizontal" 
+            x:Name="virsutineJuosta">
+            <StackLayout.GestureRecognizers>
+                <TapGestureRecognizer
+                    Tapped="BackImgButton_Clicked"
+                    NumberOfTapsRequired="1" />
+            </StackLayout.GestureRecognizers>
+            <Image
+                x:Name="BackImgButton4" 
+                Style="{StaticResource grizti_atgal_img}" 
+                VerticalOptions="CenterAndExpand"/>
+            <Label 
+                x:Name="duk" 
+                Text="D.U.K."  
+                Style="{StaticResource grizti_atgal}" 
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="Center"/>
+        </StackLayout>
+        <ScrollView 
+            Orientation="Vertical">
+            <StackLayout
+                VerticalOptions="FillAndExpand" 
+                BackgroundColor="White">
+                <Label
+                    x:Name="aprasymas" 
+                    Text="Turite klausimų? Čia rasite dažniausiai užduodamus klausimus ir jų atsakymus." 
+                    FontSize="17" 
+                    FontFamily="segoeCustom"/>
+                <expandable:ExpandableView 
+                    x:Name="expandableView" 
+                    BackgroundColor="White" 
+                    TouchHandlerView="{x:Reference frame1}"
+                    ExpandAnimationLength="100">
+
+                    <expandable:ExpandableView.PrimaryView>
+                        <Frame x:Name="frame1" BackgroundColor="#f2f2f2" Padding="0,1,0,1" HasShadow="False" >
+                            <StackLayout x:Name="stack1" Orientation="Horizontal"  BackgroundColor="White">
+                                <Label Style="{StaticResource menu_label}" BackgroundColor="White"  Text="Ar galima pakeisti pristatymo adresą jau pateikus užsakymą?" />
+                                <Image x:Name="arrow" Style="{StaticResource isskleisti}"/>
+                            </StackLayout>
+                        </Frame>
+                    </expandable:ExpandableView.PrimaryView>
+
+                    <expandable:ExpandableView.SecondaryView>
+                        <StackLayout Padding="5" Margin="30,0" Orientation="Vertical">
+                                <Label Text="Adresą galite redaguoti paspaudus nuorodą apačioje." FontSize="16"  FontFamily="segoeCustom" />
+                                <Button x:Name="eiti_i_adresai" Text="Eiti į adreso redagavimą" FontSize="16" TextColor="Gray" FontFamily="segoeCustom" BackgroundColor="Transparent" BorderColor="Transparent"  Clicked="eiti_i_adresai_Clicked"/>
+                            </StackLayout>
+                    </expandable:ExpandableView.SecondaryView>
+
+                </expandable:ExpandableView>
+                <expandable:ExpandableView x:Name="expandableView2" 
+                           BackgroundColor="White"
+                           TouchHandlerView="{x:Reference stack2}"
+                           ExpandAnimationLength="100">
+
+                    <expandable:ExpandableView.PrimaryView>
+                        <Frame x:Name="frame2" BackgroundColor="#f2f2f2" Padding="0,0,0,1" HasShadow="False">
+                            <StackLayout x:Name="stack2" Orientation="Horizontal"  BackgroundColor="White">
+                            <Label Style="{StaticResource menu_label}"  Text="Kaip užsiregistruoti?" VerticalOptions="Center" />
+                            <Image x:Name="arrow2" Style="{StaticResource isskleisti}"/>
+                        </StackLayout>
+                        </Frame>
+                    </expandable:ExpandableView.PrimaryView>
+
+                    <expandable:ExpandableView.SecondaryView>
+                        <StackLayout Padding="5" Margin="30,0">
+                                <Label Text="Nuėjus į prisijungimo langą prisijungti su Google arba Facebook paskyra, arba paspausti registruotis mygtuką ir prisiregistruoti su norimu email adresu." FontSize="16"  FontFamily="segoeCustom" />
+                                <Button x:Name="eiti_i_login" Text="Eiti į prisijungimo lagą" FontSize="16" TextColor="Gray" FontFamily="segoeCustom" BackgroundColor="Transparent" BorderColor="Transparent"  Clicked="eiti_i_login_Clicked"/>
+                            </StackLayout>
+                    </expandable:ExpandableView.SecondaryView>
+                </expandable:ExpandableView>
+                <expandable:ExpandableView x:Name="expandableView3" 
+                           BackgroundColor="White"
+                           TouchHandlerView="{x:Reference frame3}"
+                           ExpandAnimationLength="100">
+
+                    <expandable:ExpandableView.PrimaryView>
+                        <Frame x:Name="frame3" BackgroundColor="#f2f2f2" Padding="0,0,0,1" HasShadow="False">
+                            <StackLayout x:Name="stack3" Orientation="Horizontal" BackgroundColor="White">
+                                <Label Style="{StaticResource menu_label}"  Text="Kaip atlikti apmokėjimą?" VerticalOptions="Center" />
+                                <Image x:Name="arrow3" Style="{StaticResource isskleisti}"/>
+                    </StackLayout>
+                </Frame>
+                    </expandable:ExpandableView.PrimaryView>
+
+                    <expandable:ExpandableView.SecondaryView>
+                        <StackLayout Padding="5" Margin="30,0">
+                                <Label Text="Užsakymą apmokėti galite per PAYSERA sistemą (aptarnaujami visi Lietuvos bankai)." FontSize="16"  FontFamily="segoeCustom" />
+                                <Button x:Name="eiti_i_apmokejimai" Text="Eiti į krepšelį" FontSize="16" TextColor="Gray" FontFamily="segoeCustom" BackgroundColor="Transparent" BorderColor="Transparent"  Clicked="eiti_i_apmokejimai_Clicked" />
+                            </StackLayout>
+                    </expandable:ExpandableView.SecondaryView>
+
+                </expandable:ExpandableView>
+                <expandable:ExpandableView x:Name="expandableView4" 
+                           BackgroundColor="White"
+                           TouchHandlerView="{x:Reference stack4}"
+                           ExpandAnimationLength="100">
+
+                    <expandable:ExpandableView.PrimaryView>
+                        <Frame x:Name="frame4" BackgroundColor="#f2f2f2" Padding="0,0,0,1" HasShadow="False">
+                            <StackLayout x:Name="stack4" Orientation="Horizontal" BackgroundColor="White">
+                                <Label Style="{StaticResource menu_label}" Text="Kur galiu peržiūrėti užsakymo būseną?" VerticalOptions="Center" />
+                                <Image x:Name="arrow4" Style="{StaticResource isskleisti}"/>
+                            </StackLayout>
+                        </Frame>
+                    </expandable:ExpandableView.PrimaryView>
+
+                    <expandable:ExpandableView.SecondaryView>
+                        <StackLayout Padding="5" Margin="30,0">
+                                <Label Text="Užsakymo būseną galite peržiūrėti meniu juostoje paspaudus profilis ir užsakymai arba nuorodą apažioje." FontSize="16"  FontFamily="segoeCustom" />
+                                <Button x:Name="eiti_i_užsakymus" Text="Eiti į užsakymus" FontSize="16" TextColor="Gray" FontFamily="segoeCustom" BackgroundColor="Transparent" BorderColor="Transparent"  Clicked="eiti_i_užsakymus_Clicked" />
+                            </StackLayout>
+                    </expandable:ExpandableView.SecondaryView>
+
+                </expandable:ExpandableView>
+                <expandable:ExpandableView 
+                    x:Name="expandableView5" 
+                    BackgroundColor="White"
+                    TouchHandlerView="{x:Reference frame5}"
+                    ExpandAnimationLength="100">
+
+                    <expandable:ExpandableView.PrimaryView>
+                        <Frame 
+                            x:Name="frame5" 
+                            BackgroundColor="#f2f2f2" 
+                            Padding="0,0,0,1" 
+                            HasShadow="False">
+                    <StackLayout 
+                        x:Name="stack5" 
+                        Orientation="Horizontal" 
+                        BackgroundColor="White">
+                        <Label 
+                            Style="{StaticResource menu_label}" 
+                            Text="Per kiek laiko bus pristatytos prekės?" 
+                            VerticalOptions="Center" />
+                        <Image 
+                            x:Name="arrow5" 
+                            Style="{StaticResource isskleisti}"/>
+                    </StackLayout>
+                </Frame>
+                    </expandable:ExpandableView.PrimaryView>
+
+                    <expandable:ExpandableView.SecondaryView>
+                        <StackLayout 
+                                Padding="5" 
+                                Margin="30,0">
+                            <Label 
+                                    FontSize="16" 
+                                    FontFamily="segoeCustom" 
+                                    Text="Dažniausiai puokštes paruošiame per 2-4 darbo dienas. Iškilus klausimams galite skambinti +370 652 00 500." />
+                        </StackLayout>
+                    </expandable:ExpandableView.SecondaryView>
+                    </expandable:ExpandableView>
+            </StackLayout>
+        </ScrollView>
+        <local:CustomMenu x:Name="customMenu"/>
+    </StackLayout>
+</ContentPage>

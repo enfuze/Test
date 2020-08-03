@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Frame 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:local="clr-namespace:GeletaApp"
+    mc:Ignorable="d"
+    x:Class="GeletaApp.Model.PaieskosJuosta"
+    x:Name="paieskos_juostos_frame"
+    VerticalOptions="Start"
+    HasShadow="False" 
+    HorizontalOptions="FillAndExpand" >
+    <StackLayout 
+        x:Name="paieskos_stack" 
+        Orientation="Horizontal" 
+        Spacing="0" 
+        BackgroundColor="White" 
+        HorizontalOptions="FillAndExpand" 
+        VerticalOptions="StartAndExpand">
+        <ContentView 
+            BackgroundColor="White" 
+            VerticalOptions="EndAndExpand" 
+            HorizontalOptions="Start">
+            <Image 
+                x:Name="funnel" 
+                Source="funnel.png" 
+                Aspect="AspectFit"  
+                BackgroundColor="Transparent"/>
+            <ContentView.GestureRecognizers>
+                <TapGestureRecognizer Tapped="funnel_Clicked" />
+            </ContentView.GestureRecognizers>
+        </ContentView>
+        <StackLayout 
+            x:Name="paieska_st" 
+            Orientation="Horizontal" 
+            HorizontalOptions="FillAndExpand" 
+            Spacing="0">
+            <StackLayout 
+                x:Name="paieskos_st" 
+                Orientation="Vertical" 
+                HorizontalOptions="EndAndExpand" 
+                Spacing="0" 
+                VerticalOptions="End" 
+                BackgroundColor="White"> 
+                <local:MyEntry 
+                    x:Name="paieskos_juostos_entry" 
+                    TextColor="Black"
+                    HorizontalTextAlignment="Start"
+                    VerticalOptions="End"
+                    FontFamily="segoeCustom" 
+                    VerticalTextAlignment="Center"
+                    BackgroundColor="Transparent"
+                    HorizontalOptions="FillAndExpand"/>
+                <BoxView 
+                    x:Name="paieskos_linija"
+                    VerticalOptions="End"
+                    HeightRequest="1" 
+                    BackgroundColor="Black" 
+                    HorizontalOptions="FillAndExpand" />
+            </StackLayout>
+            <Label 
+                x:Name="paieska" 
+                Text="PAIEŠKA" 
+                BackgroundColor="Transparent"
+                FontFamily="segoeCustom"
+                VerticalOptions="EndAndExpand"
+                TextColor="Black" 
+                Padding="10,3,0,-5"
+                HorizontalOptions="End">
+            <Label.GestureRecognizers>
+                    <TapGestureRecognizer 
+                        x:Name="isekoti_tap"
+                        Tapped="isekoti_tap_Tapped"
+                        NumberOfTapsRequired="1" />
+                </Label.GestureRecognizers>
+</Label>
+        </StackLayout>
+        <Grid 
+            HorizontalOptions="End" 
+            Padding="10,0,0,0" >
+            <Image 
+                x:Name="shop_img" 
+                HorizontalOptions="End"
+                Source="shopperis50px.png" 
+                VerticalOptions="Start" 
+                BackgroundColor="Transparent" />
+            <Label 
+                x:Name="kiekisKrepselyje" 
+                TextColor="Black" 
+                FontSize="12" 
+                FontFamily="segoeCustom" 
+                HorizontalTextAlignment="Start" 
+                VerticalTextAlignment="Center"
+                Padding="0,5,0,0"  
+                HorizontalOptions="Center" />
+            <Grid.GestureRecognizers>
+                <TapGestureRecognizer Tapped="shop_img_Clicked"/>
+            </Grid.GestureRecognizers>
+        </Grid>
+    </StackLayout>
+</Frame>

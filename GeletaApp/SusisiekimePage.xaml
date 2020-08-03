@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:templates="clr-namespace:GeletaApp"
+    mc:Ignorable="d"
+    x:Class="GeletaApp.SusisiekimePage"
+    BackgroundColor="White" 
+    x:Name="susisiekime_cp">
+    <StackLayout 
+        BackgroundColor="White"
+        x:Name="susisiekime_st" >
+        <StackLayout 
+            x:Name="virsutineJuosta" 
+            Orientation="Horizontal" 
+            HorizontalOptions="Start" 
+            VerticalOptions="Start">
+            <StackLayout.GestureRecognizers>
+                <TapGestureRecognizer
+                    Tapped="BackImgButton_Clicked"
+                    NumberOfTapsRequired="1" />
+            </StackLayout.GestureRecognizers>
+            <Image 
+                x:Name="BackImgButton1" 
+                Style="{StaticResource grizti_atgal_img}"
+                VerticalOptions="CenterAndExpand"/>
+            <Label 
+                x:Name="susisiekime" 
+                FontFamily="segoeCustom" 
+                Text="Susisiekime" 
+                Style="{StaticResource grizti_atgal}" 
+                VerticalOptions="CenterAndExpand"/>
+        </StackLayout>
+        <Label 
+            x:Name="aprasymas" 
+            FontFamily="segoeCustom" 
+            Text="Greitai ir nuoširdžiai atsakysime į visus rūpimus klausimus" 
+            TextColor="Gray" 
+            LineBreakMode="WordWrap" 
+            FontSize="16"/>
+        <Frame 
+            x:Name="frame1" 
+            BackgroundColor="#f2f2f2" 
+            Padding="0,1,0,1" 
+            HasShadow="False">
+            <Grid 
+                x:Name="grid1" 
+                BackgroundColor=
+                "White" Padding="0">
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer 
+                        x:Name="skambinti"
+                        NumberOfTapsRequired="1" />
+                </Grid.GestureRecognizers>
+                <Label 
+                    x:Name="labe1" 
+                    Style="{StaticResource menu_label}" 
+                    FontFamily="segoeCustom" 
+                    Text="Skambinti +370 612 00 100"/>
+                <Image 
+                    x:Name="arrow1" 
+                    Source="back_arrow.png" 
+                    BackgroundColor="White" 
+                    HorizontalOptions="End" 
+                    HeightRequest="40" 
+                    WidthRequest="50"/>
+            </Grid>
+        </Frame>
+        <Frame 
+            x:Name="frame2" 
+            BackgroundColor="#f2f2f2"
+            Padding="0,0,0,1"
+            HasShadow="False">
+            <Grid 
+                x:Name="grid2"
+                BackgroundColor="White" >
+            <Grid.GestureRecognizers>
+                <TapGestureRecognizer
+                    Tapped="chatas_Tapped"
+                    NumberOfTapsRequired="1" />
+            </Grid.GestureRecognizers>
+                <Label 
+                    x:Name="labe2" 
+                    Style="{StaticResource menu_label}"
+                    BackgroundColor="White" 
+                    FontFamily="segoeCustom" 
+                    Text="Rašyti" />
+                <Image 
+                    x:Name="arrow2" 
+                    Source="back_arrow.png" 
+                    BackgroundColor="White"
+                    HorizontalOptions="EndAndExpand"/>
+        </Grid>
+        </Frame>
+        <Image 
+            Source="nespalvotas.png" 
+            x:Name="nespalvotas_logo"  
+            Opacity="0.1" 
+            VerticalOptions="EndAndExpand"/>
+
+        <templates:CustomMenu VerticalOptions="End"/>
+    </StackLayout>
+</ContentPage>

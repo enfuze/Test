@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:templates="clr-namespace:GeletaApp"
+             xmlns:model="clr-namespace:GeletaApp.Model"
+             mc:Ignorable="d"
+             x:Class="GeletaApp.FavouritePage"
+             xmlns:helpers="clr-namespace:GeletaApp.Helpers" xmlns:local="clr-namespace:GeletaApp.Helper"
+             BackgroundColor="White"
+             x:Name="puokstes_cp">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <helpers:ConverterBase64ImageSource x:Key="Base64ToImageConverter" />
+        </ResourceDictionary>
+        <ResourceDictionary>
+            <local:StringCaseConverter x:Key="caseConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <StackLayout HorizontalOptions="Center" Orientation="Vertical" Spacing="0" VerticalOptions="StartAndExpand">
+        <StackLayout x:Name="virsutinis_st" Orientation="Horizontal" VerticalOptions="StartAndExpand" BackgroundColor="White" HorizontalOptions="EndAndExpand">
+            <StackLayout x:Name="paieska_main_st" Orientation="Horizontal" VerticalOptions="StartAndExpand">
+                <StackLayout x:Name="paieskos_st" Orientation="Vertical" Spacing="0" VerticalOptions="EndAndExpand" HorizontalOptions="EndAndExpand" BackgroundColor="Transparent">
+                    <templates:MyEntry  x:Name="paieskos_juostos_entry" TextColor="Black"
+                     HorizontalTextAlignment="Start"
+                     VerticalOptions="Center" 
+                     FontFamily="segoeCustom"
+                     VerticalTextAlignment="Center"
+                 BackgroundColor="Transparent"
+                HorizontalOptions="FillAndExpand"
+                  />
+                    <BoxView x:Name="paieskos_linija"
+                         VerticalOptions="Center"
+                    HeightRequest="1" 
+                    BackgroundColor="Black" 
+                    HorizontalOptions="Fill" 
+                    />
+                </StackLayout>
+                <Label x:Name="paieska" Text="PAIEŠKA"
+                       VerticalTextAlignment="End"
+                       BackgroundColor="Transparent" 
+                       FontFamily="segoeCustom"
+                       VerticalOptions="FillAndExpand" Padding="0,0,0,-3"
+                       TextColor="Black" 
+                HorizontalOptions="EndAndExpand">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer x:Name="isekoti_tap"
+                    Tapped="isekoti_tap_Tapped"
+                    NumberOfTapsRequired="1" />
+                    </Label.GestureRecognizers>
+                </Label>
+            </StackLayout>
+            <Grid>
+                <Image x:Name="shop_img" HorizontalOptions="End" Source="shopperis50px.png" VerticalOptions="End" BackgroundColor="Transparent" />
+                <Label x:Name="kiekisKrepselyje" Text="0" TextColor="Black" FontSize="12" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="EndAndExpand"/>
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="shop_img_Clicked"/>
+                </Grid.GestureRecognizers>
+            </Grid>
+        </StackLayout>
+
+        <ScrollView x:Name="scroll" Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
+            <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="StartAndExpand">
+
+                <Label x:Name="puoktes_label" Text="MĖGSTAMIAUSI"
+                        CharacterSpacing="1.13"
+                   TextColor="Black"
+                   FontFamily="segoeCustom"
+                   HorizontalOptions="CenterAndExpand" VerticalOptions="Start" />
+                <Label x:Name="pranesimas" HorizontalOptions="CenterAndExpand"
+                       Text="Jūs neturite mėgstamiausių prekių" FontSize="Medium" Margin="0,50,0,0"
+                       IsVisible="false"/>
+
+                <CollectionView x:Name="FavouriteList" 
+                                VerticalOptions="EndAndExpand" 
+                                BackgroundColor="Transparent" >
+
+                    <CollectionView.ItemsLayout>
+                        <GridItemsLayout Orientation="Vertical" x:Name="grid_layout" VerticalItemSpacing="20"
+                                     Span="2"/>
+                    </CollectionView.ItemsLayout>
+
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate  x:Name="dataTemple">
+                            <Grid>
+                                <Grid.Resources>
+                                    <ResourceDictionary>
+                                        <helpers:ConverterBase64ImageSource x:Key="Base64ToImageConverter" />
+                                    </ResourceDictionary>
+                                </Grid.Resources>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition x:Name="nuline_row" Height="*"/>
+                                    <RowDefinition x:Name="pirma_row" Height="Auto"/>
+                                    <RowDefinition x:Name="antra_row" Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition x:Name="nulinis_stulpelis"/>
+                                </Grid.ColumnDefinitions>
+                                <Image Grid.Row="0" 
+                                   Source="{Binding Product_image, Converter={StaticResource Base64ToImageConverter}}"
+                                   Aspect="AspectFill"                                    
+                                   VerticalOptions="FillAndExpand" 
+                                   HorizontalOptions="FillAndExpand">
+                                </Image>
+                                <ImageButton 
+                                    x:Name="heartg" 
+                                    HeightRequest="35" 
+                                    Padding="5" 
+                                    BackgroundColor="Transparent" 
+                                    Clicked="heartg_Clicked" 
+                                    Source="heartg" 
+                                    Grid.Row="0" 
+                                    VerticalOptions="Start" 
+                                    HorizontalOptions="End"/>
+                                <Label Grid.Row="1" 
+                                   Text="{Binding Product_name, Converter={StaticResource caseConverter}, ConverterParameter=u}"
+                                   FontSize="16"
+                                   TextColor="Black"
+                                    HorizontalTextAlignment="Center"
+                                   FontFamily="segoeCustom"
+                                   LineBreakMode="WordWrap"
+                                   HorizontalOptions="Center"
+                                   VerticalOptions="Start" />
+                                <Label Grid.Row="2"
+                                   Text="{Binding Product_price, StringFormat='{0} €'}"
+                                   FontSize="16"
+                                   FontFamily="segoeCustom"
+                                   TextColor="Black"
+                                   LineBreakMode="WordWrap"
+                                   HorizontalOptions="Center"
+                                   VerticalOptions="Start" Padding="0,-5,0,0" />
+                                <Grid.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"
+                                                          NumberOfTapsRequired="1" />
+                                </Grid.GestureRecognizers>
+                            </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+
+                </CollectionView>
+            </StackLayout>
+        </ScrollView>
+
+        <templates:CustomMenu x:Name="customMenu"/>
+    </StackLayout>
+</ContentPage>

@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:templates="clr-namespace:GeletaApp"
+             xmlns:model="clr-namespace:GeletaApp.Model"
+             mc:Ignorable="d"
+             x:Class="GeletaApp.BouquetsPage"
+             xmlns:helpers="clr-namespace:GeletaApp.Helpers" xmlns:local="clr-namespace:GeletaApp.Helper"
+             BackgroundColor="White"
+             x:Name="puokstes_cp">
+    
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <helpers:ConverterBase64ImageSource x:Key="Base64ToImageConverter" />
+        </ResourceDictionary>
+        <ResourceDictionary>
+            <local:StringCaseConverter x:Key="caseConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <StackLayout HorizontalOptions="Center" Orientation="Vertical" Spacing="0" VerticalOptions="StartAndExpand">
+        <model:PaieskosJuosta/>
+        
+        <ScrollView x:Name="scroll" Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="StartAndExpand">
+                
+                <Label x:Name="puoktes_label" Text="PUOKŠTĖS"
+                        CharacterSpacing="1.13"
+                   TextColor="Black"
+                   FontFamily="segoeCustom"
+                   HorizontalOptions="CenterAndExpand" VerticalOptions="StartAndExpand" />
+                <Label x:Name="pranesimas" HorizontalOptions="CenterAndExpand"
+                       Text="Pagal pasirinktus filtrus duomenų nerasta" FontSize="Medium" Margin="0,50,0,0"
+                       IsVisible="false"/>
+
+                <CollectionView x:Name="BouquetsList" 
+                                VerticalOptions="EndAndExpand" 
+                                BackgroundColor="Transparent" >
+                    
+                    <CollectionView.ItemsLayout>
+                        <GridItemsLayout Orientation="Vertical" x:Name="grid_layout"
+                                     Span="2" />
+                    </CollectionView.ItemsLayout>
+                    
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate  x:Name="dataTemple">
+                            <Grid>
+                                <Grid.Resources>
+                                    <ResourceDictionary>
+                                        <helpers:ConverterBase64ImageSource x:Key="Base64ToImageConverter" />
+                                    </ResourceDictionary>
+                                </Grid.Resources>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition x:Name="nuline_row" Height="*"/>
+                                    <RowDefinition x:Name="pirma_row" Height="Auto"/>
+                                    <RowDefinition x:Name="antra_row" Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition x:Name="nulinis_stulpelis"/>
+                                </Grid.ColumnDefinitions>
+                                <Image Grid.Row="0" 
+                                   Source="{Binding Image, Converter={StaticResource Base64ToImageConverter}}"
+                                   Aspect="AspectFill"                                    
+                                   VerticalOptions="FillAndExpand" 
+                                   HorizontalOptions="FillAndExpand">
+                                </Image>
+                                <Label Grid.Row="1" 
+                                   Text="{Binding Name, Converter={StaticResource caseConverter}, ConverterParameter=u}"
+                                   FontSize="16"
+                                   TextColor="Black"
+                                   FontFamily="segoeCustom"
+                                   LineBreakMode="WordWrap"
+                                   VerticalTextAlignment="Center"
+                                   HorizontalOptions="Center"
+                                   VerticalOptions="EndAndExpand" />
+                                <Label Grid.Row="2"
+                                   Text="{Binding Price, StringFormat='{0} €'}"
+                                   FontSize="16"
+                                   FontFamily="segoeCustom"
+                                   TextColor="Black"
+                                   LineBreakMode="WordWrap"
+                                   HorizontalOptions="Center"
+                                   VerticalOptions="Start" Padding="0,-5,0,20" />
+                                <Grid.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="OnTapGestureRecognizerTapped"
+                                                          NumberOfTapsRequired="1" />
+                                </Grid.GestureRecognizers>
+                            </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                    
+                </CollectionView>
+            </StackLayout>
+        </ScrollView>
+        
+        <templates:CustomMenu x:Name="customMenu"/>
+    </StackLayout>
+</ContentPage>

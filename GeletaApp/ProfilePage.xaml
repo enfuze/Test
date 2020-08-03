@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:local="clr-namespace:GeletaApp" 
+    x:Class="GeletaApp.ProfilePage"
+    BackgroundColor="White" 
+    x:Name="profile_cp" 
+    Padding="0">
+    <StackLayout 
+        BackgroundColor="White"
+        x:Name="profile_m_stc">
+        <StackLayout 
+            Orientation="Horizontal" >
+            <StackLayout.GestureRecognizers>
+                <TapGestureRecognizer
+                    Tapped="BackImgButton_Clicked"
+                    NumberOfTapsRequired="1" />
+            </StackLayout.GestureRecognizers>
+            <Image 
+                x:Name="BackImgButton" 
+                Style="{StaticResource grizti_atgal_img}" 
+                VerticalOptions="Start" 
+                HorizontalOptions="Start"/>
+
+            <Label 
+                Text="Pagrindinė informacija" 
+                x:Name="pagr_info_label"
+                Style="{StaticResource grizti_atgal}"
+                VerticalOptions="CenterAndExpand"/>
+
+        </StackLayout>
+            
+        <Image 
+            Source="nespalvotas.png" 
+            x:Name="grybas"/>
+        <StackLayout 
+                x:Name="vardas_pavarde" 
+                Orientation="Horizontal" 
+                HorizontalOptions="CenterAndExpand">
+            <local:MyEntry 
+                Margin="0,-5,0,0"
+                x:Name="nameEditor" 
+                VerticalOptions="EndAndExpand" 
+                VerticalTextAlignment="End"
+                HorizontalOptions="Center"
+                TextColor="Black"
+                FontSize="17"
+                FontAttributes="Bold"
+                FontFamily="segoeCustom"
+                IsEnabled="False"/>
+            <ImageButton 
+                    x:Name="editName" 
+                    Source="pen.png"
+                    Clicked="editName_Clicked"
+                    HorizontalOptions="End"
+                    BackgroundColor="White"/>
+            </StackLayout>
+        <ScrollView Orientation="Vertical">
+            <StackLayout x:Name="duomenuStack">
+                
+                <Entry 
+                    x:Name="telNr" 
+                    Style="{StaticResource profilio_label}"
+                    Keyboard="Numeric"/>
+                
+                <Entry 
+                    x:Name="elPastas" 
+                    Style="{StaticResource profilio_label}"/>
+                <Entry 
+                    x:Name="miestas" 
+                    Style="{StaticResource profilio_label}"/>
+                <Entry 
+                    x:Name="adresas" 
+                    Style="{StaticResource profilio_label}"/>
+                <Entry 
+                    x:Name="pastoKodas" 
+                    Style="{StaticResource profilio_label}"/>
+                <Entry 
+                    x:Name="nuolaidosKodas" 
+                    Style="{StaticResource profilio_label}" 
+                    VerticalTextAlignment="End"/>
+                <Button 
+                    x:Name="issaugoti" 
+                    Clicked="issaugoti_Clicked" 
+                    Style="{StaticResource normalButton}" 
+                    Text="Išsaugoti" />
+            </StackLayout></ScrollView>
+        <local:CustomMenu />
+        </StackLayout>
+</ContentPage>

@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:templates="clr-namespace:GeletaApp"
+    mc:Ignorable="d"
+    x:Class="GeletaApp.MenuPage"
+    x:Name="menu_menu_cp" 
+    BackgroundColor="White">
+    <ContentPage.Content>
+        <StackLayout 
+            BackgroundColor="White" 
+            x:Name="menu_m_stc">            
+            <StackLayout Orientation="Horizontal">
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer
+                        Tapped="BackImgButton_Clicked"
+                        NumberOfTapsRequired="1" />
+                </StackLayout.GestureRecognizers>
+                <Image 
+                    x:Name="BackImgButton3" 
+                    Style="{StaticResource grizti_atgal_img}" 
+                    VerticalOptions="Start"/>
+                <Label 
+                    x:Name="meniu" 
+                    Text="Meniu"  
+                    Style="{StaticResource grizti_atgal}" 
+                    VerticalOptions="CenterAndExpand"/>
+            </StackLayout>
+            <Frame 
+                x:Name="frame1" 
+                BackgroundColor="#f2f2f2" 
+                Padding="0,1,0,1" 
+                HasShadow="False">
+                <Grid 
+                    BackgroundColor="White" 
+                    x:Name="grid1">
+                    <Grid.GestureRecognizers>
+                        <TapGestureRecognizer
+                            Tapped="Main_Button_Clicked"
+                            NumberOfTapsRequired="1" />
+                    </Grid.GestureRecognizers>
+                    <Label 
+                        Style="{StaticResource menu_label}" 
+                        Text="Apie mus"/>
+                    <Image 
+                        x:Name="arrow1" 
+                        Source="back_arrow.png" 
+                        BackgroundColor="White" 
+                        HorizontalOptions="End" />
+                </Grid>
+            </Frame>
+            <Frame 
+                x:Name="frame2" 
+                BackgroundColor="#f2f2f2" 
+                Padding="0,0,0,1" 
+                HasShadow="False">
+                <Grid 
+                    BackgroundColor="White" 
+                    x:Name="grid2">
+                    <Grid.GestureRecognizers>
+                        <TapGestureRecognizer 
+                            x:Name="duk"
+                            Tapped="duk_Tapped"
+                            NumberOfTapsRequired="1" />
+                    </Grid.GestureRecognizers>
+                <Label 
+                    Style="{StaticResource menu_label}" 
+                    BackgroundColor="White"  
+                    Text="D.U.K." />
+                    <Image
+                        x:Name="arrow2" 
+                        Source="back_arrow.png"  
+                        BackgroundColor="White" 
+                        HorizontalOptions="End" />
+                </Grid>
+            </Frame>
+            <Frame 
+                x:Name="frame3"
+                BackgroundColor="#f2f2f2" 
+                Padding="0,0,0,1" 
+                HasShadow="False">
+                <Grid 
+                    BackgroundColor="White"
+                    x:Name="grid3">
+                    <Grid.GestureRecognizers>
+                        <TapGestureRecognizer
+                            Tapped="susisiekime_Tapped"
+                            NumberOfTapsRequired="1" />
+                    </Grid.GestureRecognizers>
+                    <Label 
+                        Style="{StaticResource menu_label}" 
+                        Text="Susisiekime"/>
+                    <Image
+                        x:Name="arrow3" 
+                        Source="back_arrow.png"  
+                        BackgroundColor="White"
+                        HorizontalOptions="End" />
+                </Grid>
+            </Frame>
+            <Frame 
+                x:Name="frame4" 
+                BackgroundColor="#f2f2f2" 
+                Padding="0,0,0,1"
+                HasShadow="False">
+                <Grid 
+                    BackgroundColor="White"
+                    x:Name="grid4">
+                    <Grid.GestureRecognizers>
+                        <TapGestureRecognizer 
+                            x:Name="parduotuves"
+                            Tapped="parduotuves_Tapped"
+                            NumberOfTapsRequired="1" />
+                    </Grid.GestureRecognizers>
+                <Label 
+                    Style="{StaticResource menu_label}" 
+                    Text="Parduotuvės"/>
+                    <Image 
+                        x:Name="arrow4" 
+                        Source="back_arrow.png" 
+                        BackgroundColor="White" 
+                        HorizontalOptions="End" />
+                </Grid>
+            </Frame>
+            <Frame 
+                x:Name="frame5" 
+                BackgroundColor="#f2f2f2"
+                Padding="0,0,0,1" 
+                HasShadow="False">
+                <Grid 
+                    BackgroundColor="White" 
+                    x:Name="grid5">
+                    <Grid.GestureRecognizers>
+                        <TapGestureRecognizer 
+                            x:Name="privarumas"
+                            Tapped="privarumas_Tapped"
+                            NumberOfTapsRequired="1" />
+                        </Grid.GestureRecognizers>
+                        <Label 
+                            Style="{StaticResource menu_label}" 
+                            Text="Privatumo politika"/>
+                        <Image 
+                            x:Name="arrow5" 
+                            Source="back_arrow.png" 
+                            BackgroundColor="White" 
+                            HorizontalOptions="End"/>
+                    </Grid>
+                </Frame>
+            <Image 
+                x:Name="nespalvotas_logo"
+                Source="nespalvotas.png" 
+                Opacity="0.1" 
+                VerticalOptions="EndAndExpand"/>
+            <templates:CustomMenu VerticalOptions="End" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

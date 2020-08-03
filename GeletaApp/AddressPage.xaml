@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:local="clr-namespace:GeletaApp"
+    mc:Ignorable="d"
+    x:Class="GeletaApp.AdressPage"
+    BackgroundColor="White"
+    x:Name="address_cp"
+    Padding="0">
+    <StackLayout 
+        BackgroundColor="White" 
+        x:Name="adr_m_stc">
+        <StackLayout Orientation="Horizontal">
+            <StackLayout.GestureRecognizers>
+                <TapGestureRecognizer
+                    Tapped="BackImgButton_Clicked"
+                    NumberOfTapsRequired="1" />
+            </StackLayout.GestureRecognizers>
+            <Image 
+                x:Name="BackImgButton"  
+                Style="{StaticResource grizti_atgal_img}" 
+                VerticalOptions="Start" 
+                HorizontalOptions="Start"/>
+            <Label 
+                x:Name="adresai" 
+                Text="Adresai"
+                FontFamily="segoeCustom"
+                Style="{StaticResource grizti_atgal}"/>
+        </StackLayout>
+        <StackLayout
+            x:Name="stac1" 
+            Orientation="Vertical" 
+            VerticalOptions="StartAndExpand" 
+            Spacing="0">
+            <ListView 
+                x:Name="listView" 
+                BackgroundColor="White" 
+                VerticalOptions="Fill" 
+                HasUnevenRows="False">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid BackgroundColor="White"
+                                  x:Name="gridas">
+                                <Grid.RowDefinitions >
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <ImageButton 
+                                    
+                                    Grid.Row="0"
+                                    Margin="10,10,10,0"
+                                    Grid.Column="1"
+                                    x:Name="deleteImg" 
+                                    Clicked="deleteImg_Clicked" 
+                                    Source="delete" 
+                                    BackgroundColor="Transparent" 
+                                    HorizontalOptions="End"
+                                    HeightRequest="35"
+                                    VerticalOptions="End"
+                                    Padding="5" />
+
+                                <Label
+                                    x:Name="vardas" 
+                                    Padding="0,20,0,0"
+                                    Grid.Row="0"
+                                    Text="{Binding name}" 
+                                    Style="{StaticResource adresai}" />
+                                <Label
+                                    x:Name="gatve" 
+                                    Grid.Row="1"
+                                    Style="{StaticResource adresai}"
+                                    Text="{Binding address}"  />
+                                <Label 
+                                    x:Name="mietsas"
+                                    Grid.Row="2"
+                                    Text="{Binding city}" 
+                                    Style="{StaticResource adresai}"/>
+                                <Label
+                                    x:Name="tel_nr"
+                                    Grid.Row="3"
+                                    Text="{Binding phone_number}"
+                                    Style="{StaticResource adresai}"/>
+                                <Label
+                                    x:Name="post_code"
+                                    Grid.Row="4"
+                                    Text="{Binding postal_code}"
+                                    Style="{StaticResource adresai}"/>
+                                <Label  
+                                    Grid.Row="5" 
+                                    Grid.Column="0"
+                                    x:Name="pagrAdresas"
+                                    Margin="32,10,0,0.5"
+                                    FontSize="16" 
+                                    IsVisible="{Binding isDefault}"
+                                    Text="Pagrindinis adresas" />
+                                <Label 
+                                    Grid.Row="5" 
+                                    Grid.Column="1"
+                                    x:Name="redAdresa" 
+                                     Margin="10,10,10,0"
+                                    Text="Redaguoti adresą" 
+                                    FontSize="16" 
+                                    VerticalOptions="EndAndExpand"
+                                    HorizontalOptions="EndAndExpand">
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer 
+                                            Tapped="redaguotiAdresa_Tapped"
+                                            NumberOfTapsRequired="1" />
+                                    </Label.GestureRecognizers>
+                                </Label>
+                                <BoxView 
+                                    Grid.Row="6"
+                                    
+                                    Grid.ColumnSpan="2"
+                                    VerticalOptions="End"
+                                    HeightRequest="1" 
+                                    Margin="0,1,0,0"
+                                    BackgroundColor="Black" 
+                                    HorizontalOptions="FillAndExpand" />
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Frame 
+                BackgroundColor="LightGray" 
+                HasShadow="False" 
+                Padding="0,1,0,1" 
+                HorizontalOptions="FillAndExpand" 
+                VerticalOptions="StartAndExpand">
+                <Button
+                    x:Name="prideti_adresa" 
+                    Clicked="btnPopupButton_Clicked" 
+                    Text="PRIDĖTI NAUJĄ ADRESĄ" 
+                    FontSize="18" 
+                    BackgroundColor="White" 
+                    VerticalOptions="FillAndExpand"/>
+            </Frame>
+        </StackLayout>
+        <local:CustomMenu x:Name="customMenu"/>
+    </StackLayout>
+</ContentPage>

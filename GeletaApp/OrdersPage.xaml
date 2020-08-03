@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:local="clr-namespace:GeletaApp"
+    mc:Ignorable="d"
+    x:Class="GeletaApp.OrdersPage" 
+    BackgroundColor="White" 
+    x:Name="orders_cp">
+    <StackLayout x:Name="orders_st"
+        BackgroundColor="White" >
+        <StackLayout 
+            Orientation="Horizontal" >
+            <StackLayout.GestureRecognizers>
+                <TapGestureRecognizer
+                    Tapped="BackImgButton_Clicked"
+                    NumberOfTapsRequired="1" />
+            </StackLayout.GestureRecognizers>
+            <Image 
+                x:Name="BackImgButton" 
+                Style="{StaticResource grizti_atgal_img}" 
+                VerticalOptions="CenterAndExpand"/>
+            <Label 
+                x:Name="uzsakymai" 
+                FontFamily="segoeCustom" 
+                Text="Užsakymai"  
+                Style="{StaticResource grizti_atgal}" 
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="Center"/>
+        </StackLayout>
+        <ScrollView>
+            <Frame 
+                x:Name="frame1" 
+                BackgroundColor="#f2f2f2" 
+                Padding="0,1,0,1" 
+                HasShadow="False" >
+                <StackLayout 
+                    Orientation="Horizontal" 
+                    HorizontalOptions="FillAndExpand" 
+                    BackgroundColor="White" >
+                <Image 
+                    Source="gelyte4.jpeg" 
+                    WidthRequest="150"/>
+                <Grid>
+                        <Label Text="Pristatyta:" FontFamily="segoeCustom" Grid.Column="0" Grid.Row="0" TextColor="#046e1c" FontSize="16" Margin="10,30,0,0"/>
+                        <Label Text="2020.07.01" FontFamily="segoeCustom" Grid.Column="1" Grid.Row="0" TextColor="#046e1c" FontSize="16"  Margin="10,30,0,0"/>
+                        <Label Text="Puokštė" FontFamily="segoeCustom" Grid.Column="0" Grid.Row="1" TextColor="Black" FontSize="16" Margin="10,20,0,0"/>
+                        <Label Text="Tobula diena" FontFamily="segoeCustom" Grid.Column="1" Grid.Row="1" TextColor="Black" FontSize="16" Margin="10,20,0,0"/>
+                        <Label Text="Užsakymo nr.:" FontFamily="segoeCustom" Grid.Column="0" Grid.Row="2" TextColor="Black" FontSize="16" Margin="10,-20,0,0"/>
+                        <Label Text="48652457" FontFamily="segoeCustom" Grid.Column="1" Grid.Row="2" TextColor="Black" FontSize="16" Margin="10,-20,0,0"/>
+
+                </Grid>
+            </StackLayout>
+            </Frame>
+        </ScrollView>
+        <local:CustomMenu/>
+    </StackLayout>
+</ContentPage>

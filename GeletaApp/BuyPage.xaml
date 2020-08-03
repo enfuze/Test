@@ -1,0 +1,206 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    mc:Ignorable="d"
+    x:Class="GeletaApp.BuyPage"
+    xmlns:local="clr-namespace:GeletaApp"
+    xmlns:helpers="clr-namespace:GeletaApp.Helpers" 
+    xmlns:expandable="clr-namespace:Expandable"
+    xmlns:local1="clr-namespace:GeletaApp.Helper"
+    BackgroundColor="White" 
+    Padding="0" 
+    x:Name="buy_cp">
+    
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <helpers:ConverterBase64ImageSource x:Key="Base64ToImageConverter" />
+        </ResourceDictionary>
+        
+        <ResourceDictionary>
+            <local1:StringCaseConverter x:Key="caseConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    
+    <StackLayout x:Name="buy_st">
+        <StackLayout 
+            Orientation="Horizontal" 
+            x:Name="virsutineJuosta">
+            
+            <StackLayout.GestureRecognizers>
+                <TapGestureRecognizer
+                    Tapped="BackImgButton_Clicked"
+                    NumberOfTapsRequired="1" />
+            </StackLayout.GestureRecognizers>
+            
+            <Image 
+                x:Name="BackImgButton4" 
+                Style="{StaticResource grizti_atgal_img}" 
+                VerticalOptions="Start"/>
+            
+            <Label 
+                x:Name="krepselis" 
+                Text="Krepšelis"  
+                Style="{StaticResource grizti_atgal}"
+                VerticalOptions="Start" HorizontalOptions="Center"/>
+            
+        </StackLayout>
+        
+        <Label 
+            x:Name="nera_rezultatu" 
+            HorizontalOptions="CenterAndExpand"
+            Text="Jūs neturite krepšelyje prekių"
+            FontSize="Medium" 
+            Margin="0,50,0,0"
+            FontFamily="segoeCustom"
+            IsVisible="false"/>
+        
+            <CollectionView 
+                x:Name="CartItemList" 
+                VerticalOptions="StartAndExpand" 
+                BackgroundColor="White">    
+                
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout 
+                        Orientation="Vertical" 
+                        x:Name="grid_layout" 
+                        VerticalItemSpacing="5"
+                        Span="1" />
+                </CollectionView.ItemsLayout>
+
+            
+
+            <CollectionView.ItemTemplate>
+                    <DataTemplate x:Name="dataTemple">   
+                        <Frame 
+                            BackgroundColor="{StaticResource Key=pilka}" 
+                            Padding="0,1,0,1" 
+                            x:Name="frame0" 
+                            HasShadow="False">
+                            <Grid 
+                                x:Name="grid" 
+                                HorizontalOptions="FillAndExpand" 
+                                BackgroundColor="White">
+                                
+                                <Grid.RowDefinitions>
+                                    <RowDefinition x:Name="nuline_row" Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition x:Name="nulinis_stulpelis"  Width="Auto"/>
+                                    <ColumnDefinition x:Name="pirmas_stulpelis"  Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                
+                                
+                                <Image 
+                                    Grid.Row="0" 
+                                    HeightRequest="142.84"
+                                    Source="{Binding Image, Converter={StaticResource Base64ToImageConverter}}"
+                                    Aspect="AspectFit"                                    
+                                    VerticalOptions="FillAndExpand" 
+                                    HorizontalOptions="Start"/>
+                                
+                                <StackLayout Orientation="Vertical" Grid.Column="1" Grid.Row="0" >                             
+                                    <Label
+                                        Text="{Binding Product_name, Converter={StaticResource caseConverter}, ConverterParameter=u}"
+                                        FontSize="15"
+                                        TextColor="Black"
+                                        FontFamily="Segoe ui light"
+                                        LineBreakMode="WordWrap"
+                                        HorizontalOptions="Start"
+                                        VerticalOptions="Start"
+                                        Padding="10,10,0,0"/>
+                                    <Label 
+                                        Text="{Binding Pickup_address}"
+                                        FontSize="14"
+                                        FontFamily="Segoe ui light"
+                                        TextColor="Gray"
+                                        LineBreakMode="WordWrap"
+                                        HorizontalOptions="Start"
+                                        VerticalOptions="CenterAndExpand" 
+                                        Padding="10,0,0,0" />
+                                    <Label 
+                                        Text="{Binding Price, StringFormat='{0} €'}"
+                                        FontSize="15"
+                                        FontFamily="Segoe ui light"
+                                        TextColor="Black"
+                                        LineBreakMode="WordWrap"
+                                        HorizontalOptions="Start"
+                                        VerticalOptions="End" 
+                                        Padding="10,0,0,20" />
+                                    <Label 
+                                        Text="Su atviruku"
+                                        IsVisible="{Binding Postcard_required}"
+                                        FontSize="14"
+                                        FontFamily="Segoe ui light"
+                                        TextColor="Gray"
+                                        LineBreakMode="WordWrap"
+                                        HorizontalOptions="Start"
+                                        VerticalOptions="CenterAndExpand" 
+                                        Padding="10,0,0,0" />
+                                </StackLayout>
+                                
+                                <ImageButton 
+                                    x:Name="deleteImg" 
+                                    Clicked="deleteImg_Clicked" 
+                                    Source="delete" 
+                                    BackgroundColor="Transparent" 
+                                    HorizontalOptions="End"
+                                    HeightRequest="35"
+                                    VerticalOptions="Start"
+                                    Grid.Column="1"
+                                    Grid.Row="0"
+                                    Padding="5" />  
+                                
+                                <Grid.GestureRecognizers>
+                                    <TapGestureRecognizer 
+                                        Tapped="OnTapGestureRecognizerTapped"
+                                        NumberOfTapsRequired="1" />
+                                </Grid.GestureRecognizers>
+                            </Grid>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        
+        <StackLayout x:Name="stac" VerticalOptions="End">
+            <Button 
+                x:Name="pristatymoButton"
+                FontSize="Small"
+                Text="PRISTATYMO BŪDAS"
+                Clicked="pristatymoButton_Clicked"
+                BackgroundColor="Black" 
+                TextColor="White" 
+                FontFamily="segoeCustom"
+                Style="{StaticResource registerButton}"
+                HorizontalOptions="FillAndExpand"/>
+            <Label 
+                Text="GALUTINĖ SUMA" 
+                TextColor="Black"
+                FontFamily="segoeCustom"
+                HorizontalOptions="Center"
+                x:Name="suma"/>
+            <Label 
+                TextColor="Black"
+                FontFamily="segoeCustom" 
+                HorizontalOptions="Center"
+                x:Name="kaina"/>
+            <Button 
+                x:Name="mokejimoButton"
+                FontSize="Small"
+                Text="ATLIKTI MOKĖJIMĄ SU PAYSERA"
+                Clicked="mokejimoButton_Clicked" 
+                BackgroundColor="Black" 
+                TextColor="White" 
+                FontFamily="segoeCustom"
+                HorizontalOptions="FillAndExpand"/>
+        </StackLayout>
+        
+        <local:CustomMenu x:Name="customMenu" />
+        
+    </StackLayout>
+</ContentPage>

@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+ <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+ <item>
+	 <color android:color="#efc7c7"/>
+ </item>
+ <item android:bottom="50dp">
+ <bitmap
+	 android:src="@drawable/sumazintas_logas"
+	 android:tileMode="disabled"
+	 android:gravity="center"
+	 android:right="50dp"
+	 android:maxWidth="42dp"  
+  android:maxHeight="42dp"  
+	 />
+	</item>
+</layer-list>

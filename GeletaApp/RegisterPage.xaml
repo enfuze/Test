@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:local="clr-namespace:GeletaApp"
+             mc:Ignorable="d"
+             x:Class="GeletaApp.RegisterPage" x:Name="registerCP"
+             BackgroundColor="White">
+      <ScrollView Orientation="Vertical">
+        <StackLayout VerticalOptions="FillAndExpand" x:Name="registerST">
+            <Image x:Name="logas"
+                    Source="naujaslogo.png" />
+             
+                <Label 
+                    x:Name="registracija"
+                    Text="REGISTRACIJA" 
+                    TextColor="Black"
+                    CharacterSpacing="1.13"
+                    HorizontalTextAlignment="Center" 
+                    FontFamily="segoeCustom"/>
+                <Label 
+                    x:Name="elPastas"
+                    Text="El. paštas" 
+                    TextColor="Black" 
+                    VerticalTextAlignment="End"
+                    FontFamily="segoeCustom"/>
+                <local:MyEntry 
+                    x:Name="emailEntry" 
+                    Style="{StaticResource email_entry}" 
+                    FontFamily="segoeCustom"/>
+                <Label 
+                    x:Name="slaptazodisLabel"
+                    Text="Slaptažodis" 
+                    TextColor="Black" 
+                    VerticalTextAlignment="End"
+                    FontFamily="segoeCustom"/>
+                <local:MyEntry  
+                    x:Name="passwordEntry" 
+                    Style="{StaticResource password_entry}" 
+                    FontFamily="segoeCustom"/>
+                <Label 
+                    Text="Patvirtinti slaptažodį" 
+                    VerticalTextAlignment="End"
+                    TextColor="Black"
+                    x:Name="patvirtintiSlaptazodi"
+                    FontFamily="segoeCustom"/>
+                <local:MyEntry 
+                    x:Name="confirmpasswordEntry" 
+                    Style="{StaticResource password_entry}" 
+                    FontFamily="segoeCustom"/>
+            <Frame x:Name="frame1" VerticalOptions="EndAndExpand"
+                    BackgroundColor="{StaticResource pilka}" 
+                    Padding="1" >
+                <Button 
+                    x:Name="RegisterButton"
+                    Text="Registruotis"
+                    FontFamily="segoeCustom"
+                    Style="{StaticResource registerButton}"
+                    Clicked="RegisterButton_Clicked"/>
+            </Frame>
+
+        </StackLayout>
+</ScrollView>
+</ContentPage>

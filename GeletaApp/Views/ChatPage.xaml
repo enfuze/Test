@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:local="clr-namespace:GeletaApp.Helpers" 
+             xmlns:controls="clr-namespace:GeletaApp.Controls"
+              xmlns:partials="clr-namespace:GeletaApp.Views.Partials" xmlns:local1="clr-namespace:GeletaApp"
+             x:Class="GeletaApp.Views.ChatPage" x:Name="chatcp" BackgroundColor="White" >
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:ChatTemplateSelector x:Key="MessageTemplateSelector"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <StackLayout x:Name="chatstack" Spacing="0">
+        <StackLayout x:Name="virsutineJuosta" Orientation="Horizontal" HorizontalOptions="Start" VerticalOptions="Start">
+        <StackLayout.GestureRecognizers>
+            <TapGestureRecognizer
+                Tapped="BackImgButton_Clicked"
+                NumberOfTapsRequired="1" />
+        </StackLayout.GestureRecognizers>
+        <Image x:Name="BackImgButton1" Style="{StaticResource grizti_atgal_img}" VerticalOptions="CenterAndExpand"/>
+            <Label x:Name="susirasinejimas" Text="Susirašinėjimas" Style="{StaticResource grizti_atgal}" VerticalOptions="CenterAndExpand"/>
+    </StackLayout>
+    <Grid RowSpacing="0"
+           ColumnSpacing="0" x:Name="gridas">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <controls:ExtendedListView Grid.Row="0" 
+                 ItemTemplate="{StaticResource MessageTemplateSelector}" 
+                 ItemsSource="{Binding Messages}" 
+                 Margin="0"
+                 ItemTapped="OnListTapped"
+                 Rotation="180" 
+                 FlowDirection="RightToLeft"
+                 HasUnevenRows="True" x:Name="ChatList"
+                      
+                 VerticalOptions="Start" 
+                 SeparatorColor="Transparent"
+                 ItemAppearingCommand="{Binding MessageAppearingCommand}"
+                 ItemDisappearingCommand="{Binding MessageDisappearingCommand}">
+         </controls:ExtendedListView>
+            <Frame HorizontalOptions="End" 
+                                 VerticalOptions="End"
+                                 HasShadow="false" 
+                                 Grid.Row="1"  
+                                 HeightRequest="50" WidthRequest="50"
+                                 CornerRadius="25"
+                                 Padding="1"
+                                 BackgroundColor="MidnightBlue"   
+                                 IsVisible="{Binding ShowScrollTap,Mode=TwoWay}">
+                <StackLayout Spacing="3">
+                    <Label Text="{Binding PendingMessageCount}"
+                              HorizontalOptions="CenterAndExpand"
+                              IsVisible="{Binding PendingMessageCountVisible}"
+                              VerticalTextAlignment="Center"
+                              TextColor="{DynamicResource primary}"
+                           FontFamily="segoeCustom"/>
+                    <Image Source="ic_scrolldown.png"
+                               WidthRequest="30"
+                               HeightRequest="30"
+                               VerticalOptions="CenterAndExpand"/>
+
+                </StackLayout>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="ScrollTap"/>
+                </Frame.GestureRecognizers>
+            </Frame> </Grid>
+
+        <Frame BackgroundColor="#F2F2F2" Padding="0,1,0,1" VerticalOptions="EndAndExpand" HasShadow="False" HorizontalOptions="FillAndExpand">
+            <partials:ChatInputBarView HorizontalOptions="FillAndExpand" x:Name="chatInput" VerticalOptions="FillAndExpand"/>
+        </Frame>
+
+        <local1:CustomMenu x:Name="customMenu" VerticalOptions="End"/>
+    </StackLayout>
+</ContentPage>

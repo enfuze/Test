@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:templates="clr-namespace:GeletaApp"
+             mc:Ignorable="d"
+             x:Class="GeletaApp.PrivarumoPolitikaPage"
+             BackgroundColor="White" x:Name="privatumo_cp">
+    <StackLayout BackgroundColor="White" x:Name="privatumo_stc">
+        <StackLayout Orientation="Horizontal" x:Name="virsutineJuosta">
+            <StackLayout.GestureRecognizers>
+                <TapGestureRecognizer
+                Tapped="BackImgButton_Clicked"
+                NumberOfTapsRequired="1" />
+            </StackLayout.GestureRecognizers>
+            <Image x:Name="BackImgButton4" Style="{StaticResource grizti_atgal_img}" VerticalOptions="CenterAndExpand"/>
+            <Label x:Name="privatumoLabel" 
+                   Text="Privatumo politika" 
+                   Style="{StaticResource grizti_atgal}"
+                   VerticalOptions="CenterAndExpand" 
+                   HorizontalOptions="Center"/>
+        </StackLayout>
+        <ScrollView>
+            <StackLayout>
+                <Label 
+                    x:Name="kitaLabel"
+                    FontFamily="segoeCustom"
+                       FontAttributes="Bold" TextColor="Black" Text="Paysera sistema apsaugota pažangiausiais SSL koduotais saugumo sertifikatais, moderniausiais techniniais ir programiniais sprendimais." HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" LineBreakMode="WordWrap"/>
+        <Label x:Name="tekstas"
+               FontFamily="segoeCustom" 
+               Text="Savo lankytojų IP adresus naudojame siekdami nustatyti problemas, iškilusias naudojantis savo internetinio tinklapio tvarkymo sumetimais. Kad būtų galima sekti užsakymo vykdymo eigą, mūsų puslapyje turi būti naudojami &quot;slapukai&quot;. Pačiame &quot;slapuke&quot; nėra jokių asmeninių duomenų, tai paprasčiausias identifikacijos kodas, kuris padeda mums savo puslapyje surasti jūsų įrašus, kai jūs atliekate kitą pirkimo veiksmą. Informacija apie jūsų &quot;slapuką&quot; iš mūsų serverių ištrinama, kai išeinate iš mūsų puslapio. Mes neperduodame jokių asmeninių savo klientų duomenų trečiosioms šalims.
+
+Užsakymo formoje pateikti kontaktiniai duomenys yra būtini pristatant gėles ir siunčiant pranešimus dėl užsakymo patvirtinimo užsakovams; jais naudojamės mes ir užsakymo vykdytojas. Užsakovo kontaktiniais duomenimis naudojamasi ir tuomet, kai būtina susisiekti su klientu. Tačiau šia informacija nesinaudojama siunčiant atskirus laiškus ar informaciją apie mūsų įmonę.
+
+Jūsų kreditinių kortelių numeriai mūsų serveriuose nesaugomi. Pinigai iš kreditinių kortelių ir bankų išskaičiuojami naudojantis mokejimai.lt sistema.
+
+mokejimai.lt imasi specialių priemonių, siekiant apsaugoti jūsų naršyklę, kad nebūtų išsaugoti puslapiai su nurodytais kreditinės kortelės numeriais ar banko kodais jūsų naršyklės vidaus atmintyje kietajame diske.
+
+Šio serverio pažeidžiamiausios vietos yra apsaugotos koduotu ryšiu tarp jūsų naršyklės ir mokejmai.lt. Pirkėjų duomenis mato tik svetainės administratorius.
+
+Nei kurjeris, pristatantis gėles, nei asmuo, gaunantis gėles, nematys jokių Jūsų duomenų, išskyrus Jūsų pateiktas pastabas užsakymo formavimo metu ir tai, ką užrašysite ant sveikinimo atviruko." TextColor="Black" FontSize="15" LineBreakMode="WordWrap" HorizontalTextAlignment="Start" HorizontalOptions="Center" VerticalOptions="Center"/>
+            </StackLayout>
+        </ScrollView>
+        <templates:CustomMenu x:Name="customMenu"/>
+    </StackLayout>
+</ContentPage>
