@@ -9,38 +9,39 @@
     x:Class="GeletaApp.LoginPage"
     BackgroundColor="White"
     x:Name="loginCP">
-       <ScrollView Orientation="Vertical">
-           <StackLayout VerticalOptions="Fill" x:Name="loginST">
+    
+    <ScrollView Orientation="Vertical">
+        <StackLayout VerticalOptions="Fill" x:Name="loginST">
 
-                <Image x:Name="logas"
-                    Source="naujaslogo.png" 
-                    />
-                <Label x:Name="prisijungti_naudojant"
-                    Text="PRISIJUNGTI NAUDOJANT"
-                    TextColor="Black"
-                    CharacterSpacing="1.13" 
-                    HorizontalTextAlignment="Center"
-                    FontFamily="segoeCustom"/>
-                <Label 
-                    Text="El. paštas" 
-                    x:Name="el_pastas" 
-                    VerticalTextAlignment="End"
-                    TextColor="Black" 
-                    FontFamily="segoeCustom"/>
-                <local:MyEntry 
-                    x:Name="emailEntry" 
-                    Style="{StaticResource email_entry}" 
-                    FontFamily="segoeCustom"/>
-                <Label 
-                    Text="Slaptažodis" 
-                    VerticalTextAlignment="End"
-                    TextColor="Black" 
-                    x:Name="slaptazodisLabel"
-                    FontFamily="segoeCustom"/>
-                <local:MyEntry 
-                    x:Name="passwordEntry" 
-                    Style="{StaticResource password_entry}" 
-                    FontFamily="segoeCustom"/>
+            <Image 
+                x:Name="logas"
+                Source="naujaslogo.png"/>
+            <Label x:Name="prisijungti_naudojant"
+                Text="PRISIJUNGTI NAUDOJANT"
+                TextColor="Black"
+                CharacterSpacing="1.13" 
+                HorizontalTextAlignment="Center"
+                FontFamily="segoeCustom"/>
+            <Label 
+                Text="El. paštas" 
+                x:Name="el_pastas" 
+                VerticalTextAlignment="End"
+                TextColor="Black" 
+                FontFamily="segoeCustom"/>
+            <local:MyEntry 
+                x:Name="emailEntry" 
+                Style="{StaticResource email_entry}" 
+                FontFamily="segoeCustom"/>
+            <Label 
+                Text="Slaptažodis" 
+                VerticalTextAlignment="End"
+                TextColor="Black" 
+                x:Name="slaptazodisLabel"
+                FontFamily="segoeCustom"/>
+            <local:MyEntry 
+                x:Name="passwordEntry" 
+                Style="{StaticResource password_entry}" 
+                FontFamily="segoeCustom"/>
             <Label 
                 Text="Pamiršau slaptažodį" 
                 TextColor="Black" 
@@ -59,45 +60,44 @@
                 TextColor="Black"
                 HorizontalTextAlignment="Center"
                 FontFamily="segoeCustom"/>
-                <Grid x:Name="grid">
-                    <ImageButton 
-                        x:Name="google"
-                        Grid.Column="0" 
-                        Source="google.png" 
-                        BackgroundColor="White" 
-                        Aspect="AspectFit" 
-                        HorizontalOptions="Start"/>
-                    <ImageButton 
-                        x:Name="facebook"
-                        Grid.Column="1"
-                        Source="Facebook.png" 
-                        BackgroundColor="White" 
-                        Aspect="AspectFit" 
-                        HorizontalOptions="End"/>
-                </Grid>
-                <Frame x:Name="frame1"
-                    BackgroundColor="{StaticResource pilka}" 
-                    Padding="1" >
-                    <Button 
-                        x:Name="LoginButton" 
-                        Text="Prisijungti" 
-                        HorizontalOptions="FillAndExpand"
-                        Clicked="LoginButton_Clicked"
-                        Style="{StaticResource registerButton}"
-                        FontFamily="segoeCustom"/>
-                </Frame>
-                <Frame 
-                    BackgroundColor="{StaticResource pilka}" 
-                    Padding="1" x:Name="frame2">
-                    <Button 
-                        HorizontalOptions="FillAndExpand" 
-                        BackgroundColor="White"
-                        x:Name="RegisterButton"
-                        Text="Registruotis" 
-                        Style="{StaticResource registerButton}"
-                        Clicked="RegisterButton_Clicked" 
-                        FontFamily="segoeCustom"/>
-                </Frame>
+            
+            <Grid x:Name="grid">
+                <ImageButton 
+                    x:Name="google"
+                    Grid.Column="0" 
+                    Source="google.png" 
+                    BackgroundColor="White" 
+                    Aspect="AspectFit" 
+                    HorizontalOptions="Start"/>
+                <ImageButton 
+                    x:Name="facebook"
+                    Grid.Column="1"
+                    Source="Facebook.png" 
+                    BackgroundColor="White" 
+                    Aspect="AspectFit" 
+                    HorizontalOptions="End"/>
+            </Grid>
 
-        </StackLayout> </ScrollView>
+            <Frame x:Name="frame1" BackgroundColor="{StaticResource pilka}" Padding="1">
+                <Button 
+                    x:Name="LoginButton" 
+                    Text="Prisijungti" 
+                    HorizontalOptions="FillAndExpand"
+                    Clicked="LoginButton_Clicked"
+                    Style="{StaticResource registerButton}"
+                    FontFamily="segoeCustom"/>
+            </Frame>
+
+            <Frame BackgroundColor="{StaticResource pilka}" Padding="1" x:Name="frame2">
+                <Button 
+                    HorizontalOptions="FillAndExpand" 
+                    BackgroundColor="White"
+                    x:Name="RegisterButton"
+                    Text="Registruotis" 
+                    Style="{StaticResource registerButton}"
+                    Clicked="RegisterButton_Clicked" 
+                    FontFamily="segoeCustom"/>
+            </Frame>
+        </StackLayout> 
+    </ScrollView>
 </ContentPage>

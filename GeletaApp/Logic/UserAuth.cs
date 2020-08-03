@@ -276,7 +276,7 @@ namespace GeletaApp.Logic
         /// <summary>
         /// Paimamas tokenas iš sqlite duombazes
         /// </summary>
-        /// <returns>Gražinamas heshuotas tokenas</returns>
+        /// <returns>Grąžinamas heshuotas tokenas</returns>
         public static string getHashedToken()
         {
             string token = "";

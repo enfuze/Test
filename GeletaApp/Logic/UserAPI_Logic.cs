@@ -296,7 +296,6 @@ namespace GeletaApp.Logic
                 var userRoot = JsonConvert.DeserializeObject<DataRoot>(json);
                 var result = userRoot.message;
                 rez = result;
-
             }
             return rez;
         }
