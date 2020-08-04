@@ -3,8 +3,6 @@ using GeletaApp.Model;
 using SQLite;
 using System;
 using System.ComponentModel;
-using System.Runtime.InteropServices;
-using System.Diagnostics;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 

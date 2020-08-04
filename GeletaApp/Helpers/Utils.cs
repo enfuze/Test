@@ -1,9 +1,6 @@
 ﻿using Android.Content;
-using Android.Views;
 using Android.Widget;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace GeletaApp.Helpers
 {

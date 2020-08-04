@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
-using GeletaApp.Logic;
+﻿using GeletaApp.Logic;
 using GeletaApp.Model;
-using Rg.Plugins.Popup.Services;
-using SQLite;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -44,8 +40,8 @@ namespace GeletaApp
 
             SearchList.ItemsSource = listas;
 
-               
-            
+
+
         }
         protected override void OnAppearing()
         {
@@ -62,14 +58,16 @@ namespace GeletaApp
 
             int id = xasd.Product_id;
             string type = xasd.Product_type;
-            int tipas = 0 ;
+            int tipas = 0;
             if (type.Equals("gele"))
             {
                 tipas = 1;
-            } else if (type.Equals("puokste"))
+            }
+            else if (type.Equals("puokste"))
             {
                 tipas = 2;
-            } else if (type.Equals("kitas"))
+            }
+            else if (type.Equals("kitas"))
             {
                 tipas = 3;
             }

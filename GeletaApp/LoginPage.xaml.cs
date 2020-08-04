@@ -26,28 +26,29 @@ namespace GeletaApp
             // Height (in pixels)
             var height = mainDisplayInfo.Height;
             var xamarinHeight = height / mainDisplayInfo.Density;
-            loginCP.HeightRequest = xamarinHeight;
-            loginCP.WidthRequest = xamarinWidth;
-            logas.HeightRequest = xamarinHeight * 30.625 / 100;
-            loginST.Padding = new Thickness(xamarinWidth * 5.7407 / 100, xamarinHeight * 7.1875/100, xamarinWidth * 5.7407 / 100, xamarinHeight * 0.885 / 100);
-            prisijungti_naudojant.FontSize = xamarinHeight * 2.325 / 100;
-            prisijungti_naudojant.Padding = new Thickness(xamarinWidth * 8.796 / 100, xamarinHeight * 5.677083 / 100, xamarinWidth * 8.796 / 100, xamarinHeight * 1.0416 / 100);
-            el_pastas.HeightRequest = xamarinHeight * 3.59375 / 100;
-            el_pastas.Margin = new Thickness(xamarinWidth * 8.796 / 100, 0, xamarinWidth * 8.796 / 100, 0);
-            emailEntry.HeightRequest = xamarinHeight * 3.59375 / 100;
-            emailEntry.Margin = new Thickness(xamarinWidth * 8.796 / 100, 0, xamarinWidth * 8.796 / 100, 0);
-            slaptazodisLabel.HeightRequest = xamarinHeight * 3.59375 / 100;
-            slaptazodisLabel.Margin = new Thickness(xamarinWidth * 8.796 / 100, 0, xamarinWidth * 8.796 / 100, 0);
-            passwordEntry.HeightRequest = xamarinHeight * 3.59375 / 100;
-            passwordEntry.Margin = new Thickness(xamarinWidth * 8.796 / 100, 0, xamarinWidth * 8.796 / 100,0);
-            arbaLabel.Padding = new Thickness(xamarinWidth * 8.796 / 100, xamarinHeight * 6.25 / 100, xamarinWidth * 8.796 / 100, xamarinHeight * 1.0416 / 100);
-            grid.HeightRequest = xamarinHeight * 15.72 / 100;
-            grid.WidthRequest = xamarinWidth * 42.87 / 100;
-            grid.Margin = new Thickness(xamarinWidth * 22.87 / 100, 0, xamarinWidth * 22.87 / 100, 0);
-            google.HeightRequest = xamarinHeight * 8.85 / 100;
-            facebook.HeightRequest = xamarinHeight * 8.85 / 100;
-            pamirsauSlap.HeightRequest = xamarinHeight * 3.59375 / 100;
-            frame1.Margin = new Thickness(0, 0, 0, xamarinHeight * 2.083 / 100);
+            loginCP.HeightRequest = height;
+            loginCP.WidthRequest = width;
+            //logas.HeightRequest = xamarinHeight * 30.625 / 100;
+            //loginST.Padding = new Thickness(xamarinWidth * 5.7407 / 100, xamarinHeight * 7.1875/100, xamarinWidth * 5.7407 / 100, xamarinHeight * 0.885 / 100);
+            //prisijungti_naudojant.FontSize = xamarinHeight * 2.325 / 100;
+            //prisijungti_naudojant.Padding = new Thickness(xamarinWidth * 8.796 / 100, xamarinHeight * 5.677083 / 100, xamarinWidth * 8.796 / 100, xamarinHeight * 1.0416 / 100);
+            //el_pastas.HeightRequest = xamarinHeight * 3.59375 / 100;
+            //el_pastas.Margin = new Thickness(xamarinWidth * 8.796 / 100, 0, xamarinWidth * 8.796 / 100, 0);
+            //emailEntry.HeightRequest = xamarinHeight * 3.59375 / 100;
+            //emailEntry.Margin = new Thickness(xamarinWidth * 8.796 / 100, 0, xamarinWidth * 8.796 / 100, 0);
+            //slaptazodisLabel.HeightRequest = xamarinHeight * 3.59375 / 100;
+            //slaptazodisLabel.Margin = new Thickness(xamarinWidth * 8.796 / 100, 0, xamarinWidth * 8.796 / 100, 0);
+            //passwordEntry.HeightRequest = xamarinHeight * 3.59375 / 100;
+            //passwordEntry.Margin = new Thickness(xamarinWidth * 8.796 / 100, 0, xamarinWidth * 8.796 / 100,0);
+            //arbaLabel.Padding = new Thickness(xamarinWidth * 8.796 / 100, xamarinHeight * 6.25 / 100, xamarinWidth * 8.796 / 100, xamarinHeight * 1.0416 / 100);
+            //grid.HeightRequest = height;
+            //grid.WidthRequest = width;
+            //grid.Margin = new Thickness(xamarinWidth * 22.87 / 100, 0, xamarinWidth * 22.87 / 100, 0);
+            //google.HeightRequest = xamarinHeight * 8.85 / 100;
+            //facebook.HeightRequest = xamarinHeight * 8.85 / 100;
+            //pamirsauSlap.HeightRequest = xamarinHeight * 3.59375 / 100;
+
+            //frame1.Margin = new Thickness(0, 0, 0, xamarinHeight * 2.083 / 100);
         }
         private async void RegisterButton_Clicked(object sender, EventArgs e)
         {

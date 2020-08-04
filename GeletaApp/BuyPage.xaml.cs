@@ -1,16 +1,13 @@
-﻿using System;
-using Xamarin.Essentials;
+﻿using Expandable;
 using GeletaApp.Logic;
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 using GeletaApp.Model;
 using SQLite;
-using System.Linq;
-using Expandable;
-using Rg.Plugins.Popup.Services;
+using System;
 using System.Collections.Generic;
-using System.Threading;
-using System.Diagnostics;
+using System.Linq;
+using Xamarin.Essentials;
+using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
 
 namespace GeletaApp
 {
@@ -44,12 +41,12 @@ namespace GeletaApp
             virsutineJuosta.HeightRequest = xamarinHeight * 10.416 / 100;
             BackImgButton4.WidthRequest = xamarinWidth * 6.8518 / 100;
             virsutineJuosta.Padding = new Thickness(xamarinWidth * 3.24 / 100, 0, 0, 0);
-            krepselis.Padding = new Thickness(xamarinWidth * 8.888/ 100, 0, 0, 0);
-           // frame1.HeightRequest = xamarinHeight * (375 * 100 / height) / 100;
+            krepselis.Padding = new Thickness(xamarinWidth * 8.888 / 100, 0, 0, 0);
+            // frame1.HeightRequest = xamarinHeight * (375 * 100 / height) / 100;
             suma.FontSize = xamarinHeight * 2.5 / 100;
             kaina.FontSize = xamarinHeight * 2.5 / 100;
             stac.Padding = new Thickness(xamarinWidth * 3.24 / 100, 0, xamarinWidth * 3.24 / 100, 0);
-          //  sarasoStack.HeightRequest = xamarinHeight - expandableView.SecondaryView.FindByName<Grid>("grid").HeightRequest - customMenu.HeightRequest - virsutineJuosta.HeightRequest - frame1.HeightRequest;
+            //  sarasoStack.HeightRequest = xamarinHeight - expandableView.SecondaryView.FindByName<Grid>("grid").HeightRequest - customMenu.HeightRequest - virsutineJuosta.HeightRequest - frame1.HeightRequest;
             customMenu.Padding = new Thickness(xamarinWidth * 3.24 / 100, 0, xamarinWidth * 3.24 / 100, 0);
             //expandableView.SecondaryView.FindByName<Grid>("grid").HeightRequest = xamarinHeight * 19.53125 / 100;
             //expandableView.SecondaryView.FindByName<RadioButton>("nemokamas_radio").FontSize = xamarinHeight * 1.8 / 100;
@@ -73,7 +70,7 @@ namespace GeletaApp
                 //CartItemList.ItemsSource = null;
                 nera_rezultatu.IsVisible = true;
             }
-            
+
             //user_adresai = UserAuth.GetAddresses();
         }
 
@@ -111,7 +108,7 @@ namespace GeletaApp
             switch (address_order)
             {
                 case "maxima":
-                    
+
                     for (int i = 0; i < prekes.Count; i++)
                     {
                         if (prekes[i].Pickup_address_type != "maxima")
@@ -178,7 +175,7 @@ namespace GeletaApp
             base.OnAppearing();
             //expandableView.StatusChanged += OnStatusChanged;
 
-            if (prekes.Count > 0) 
+            if (prekes.Count > 0)
             {
                 for (int i = 0; i < prekes.Count; i++)
                 {
@@ -238,7 +235,7 @@ namespace GeletaApp
                     last_index++;
                     last = li.ElementAt(li.Count - last_index);
                     page = last.ToString();
-                } 
+                }
                 Functions tools = new Functions();
                 tools.BackButtonWithExit("buy", page);
             }
@@ -247,7 +244,7 @@ namespace GeletaApp
         private async void deleteImg_Clicked(object sender, EventArgs e)
         {
             var choice = await DisplayAlert("", "Ar norite pašalinti prekę iš krepšelio?", "TAIP", "NE");
-            if (choice) 
+            if (choice)
             {
                 var imageSender = sender as ImageButton;
                 var gaminu = imageSender.Parent;
@@ -262,7 +259,8 @@ namespace GeletaApp
                 await App.Current.MainPage.Navigation.PushAsync(new BuyPage());
             }
         }
-        public void showAlertDialogButtonClicked() { 
+        public void showAlertDialogButtonClicked()
+        {
 
         }
         private void pristatymoButton_Clicked(object sender, EventArgs e)

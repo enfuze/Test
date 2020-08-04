@@ -1,20 +1,7 @@
-﻿using System;
-using Android.App;
+﻿using Android.App;
 using Android.Content.PM;
-using Android.Widget;
 using Android.OS;
-using Xamarin.Essentials;
-using Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat;
 using Rg.Plugins.Popup.Services;
-using Android.Content;
-using GeletaApp;
-using Android.Views;
-using Android.Runtime;
-using Plugin.Connectivity;
-using Xamarin.Forms;
-using System.Collections.Generic;
-using System.Linq;
-using Rg.Plugins.Popup.Pages;
 
 namespace GeletaApp.Droid
 {

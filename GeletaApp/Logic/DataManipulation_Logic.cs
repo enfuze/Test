@@ -3,8 +3,6 @@ using SQLite;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using Xamarin.Forms;
 
 namespace GeletaApp.Logic
 {
@@ -19,7 +17,7 @@ namespace GeletaApp.Logic
             {
                 using (SQLiteConnection conn = new SQLiteConnection(App.DatabaseLocation))
                 {
-                    
+
                     BouquetPost post = new BouquetPost()
                     {
                         Id = bouquets[i].id,
@@ -177,7 +175,7 @@ namespace GeletaApp.Logic
                 for (int i = 0; i < count; i++)
                 {
                     conn.CreateTable<Home_StuffPost>();
-                   //var kita = conn.Find<Home_StuffPost>(home_stuff[i].id);
+                    //var kita = conn.Find<Home_StuffPost>(home_stuff[i].id);
                     Home_StuffPost post = new Home_StuffPost()
                     {
                         Id = home_stuff[i].id,
@@ -188,7 +186,7 @@ namespace GeletaApp.Logic
                         Discount = home_stuff[i].discount,
                         Gender = home_stuff[i].gender,
                         Home_stuff_type_id = home_stuff[i].home_stuff_type_id
-                        
+
                     };
                     try
                     {

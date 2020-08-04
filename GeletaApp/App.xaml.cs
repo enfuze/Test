@@ -2,10 +2,8 @@
 using GeletaApp.Model;
 using Plugin.Connectivity;
 using SQLite;
-using System;
 using Xamarin.Essentials;
 using Xamarin.Forms;
-using Xamarin.Forms.Internals;
 
 namespace GeletaApp
 {
@@ -15,7 +13,8 @@ namespace GeletaApp
         private string Conn
         {
             get => _conn;
-            set {
+            set
+            {
                 _conn = value;
                 OnPropertyChanged();
             }
@@ -65,7 +64,7 @@ namespace GeletaApp
             };
 
 
-            
+
         }
         private void CheckContiniously()
         {
@@ -77,7 +76,7 @@ namespace GeletaApp
                     Functions.SyncDatabase();
                 }
             };
-            
+
 
         }
         public App(string databaseLocation)
@@ -91,25 +90,25 @@ namespace GeletaApp
                      CheckConnection();
                  });*/
             DatabaseLocation = databaseLocation;
-            
+
             MainPage = new NavigationPage(new MainPage());
 
-            
-        }
-       /* private async void CheckConnection()
-        {
-            if (!CrossConnectivity.Current.IsConnected)
-            {
 
-            }
-            //await Navigation.PushAsync(new YourPageWhenThereIsNoConnection());
-            else
-                return;
-        }*/
+        }
+        /* private async void CheckConnection()
+         {
+             if (!CrossConnectivity.Current.IsConnected)
+             {
+
+             }
+             //await Navigation.PushAsync(new YourPageWhenThereIsNoConnection());
+             else
+                 return;
+         }*/
 
         protected override void OnStart()
         {
-            using(SQLiteConnection conn = new SQLiteConnection(App.DatabaseLocation))
+            using (SQLiteConnection conn = new SQLiteConnection(App.DatabaseLocation))
             {
                 ShoppingCartPost cart = new ShoppingCartPost()
                 {

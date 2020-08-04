@@ -8,11 +8,11 @@ using Xamarin.Essentials;
 
 namespace Splash_Screen
 {
-    [Activity(  Theme = "@style/MyTheme.Splash", 
-                Label = "Gėlėta", Icon = "@drawable/logo", 
-                MainLauncher = true, 
-                NoHistory = true, 
-                ScreenOrientation = ScreenOrientation.Portrait, 
+    [Activity(Theme = "@style/MyTheme.Splash",
+                Label = "Gėlėta", Icon = "@drawable/logo",
+                MainLauncher = true,
+                NoHistory = true,
+                ScreenOrientation = ScreenOrientation.Portrait,
                 ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class SplashActivity : Activity
     {
@@ -32,7 +32,7 @@ namespace Splash_Screen
                 //blNetworkStatus.Text = "Network is Not Available";
             }
             // Puoksciu nuskaitymas is api ir DB atnaujinimas
-            
+
             // --- here can implement to do whatever you want before invoking the MainActivity ---
             InvokeMainActivity();
             Finish();

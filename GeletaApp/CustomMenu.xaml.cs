@@ -1,8 +1,8 @@
-﻿using System;
-using System.Linq;
-using GeletaApp.Model;
+﻿using GeletaApp.Model;
 using Rg.Plugins.Popup.Services;
 using SQLite;
+using System;
+using System.Linq;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -36,7 +36,7 @@ namespace GeletaApp
             // Screen density
             var density = mainDisplayInfo.Density;
 
-            menu_sl.Padding = new Thickness(0, xamarinHeight * 1.5625  / 100, 0, 0);
+            menu_sl.Padding = new Thickness(0, xamarinHeight * 1.5625 / 100, 0, 0);
             CustomToolBarItem.HeightRequest = xamarinHeight * 7.604 / 100;
             puokste_img.WidthRequest = xamarinWidth * 5.74 / 100;
             tulip_img.WidthRequest = xamarinWidth * 5.74 / 100;

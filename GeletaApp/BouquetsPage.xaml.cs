@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
-using GeletaApp.Logic;
+﻿using GeletaApp.Logic;
 using GeletaApp.Model;
-using Rg.Plugins.Popup.Services;
 using SQLite;
+using System;
+using System.Linq;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -40,7 +36,7 @@ namespace GeletaApp
             puoktes_label.Margin = new Thickness(0, 0, 0, xamarinHeight * 1.302 / 100);
             BouquetsList.HeightRequest = xamarinHeight;
             BouquetsList.WidthRequest = xamarinWidth;
-           // puoktes_label.FontSize = xamarinHeight * 4.79 / 100;
+            // puoktes_label.FontSize = xamarinHeight * 4.79 / 100;
             grid_layout.HorizontalItemSpacing = xamarinWidth * 1.666 / 100;
             using (SQLiteConnection conn = new SQLiteConnection(App.DatabaseLocation))
             {
@@ -62,7 +58,7 @@ namespace GeletaApp
                 else
                 {
                     var posts = conn.Query<BouquetPost>(query);
-                    if(posts.Count > 0)
+                    if (posts.Count > 0)
                     {
                         BouquetsList.ItemsSource = posts;
                     }
@@ -71,7 +67,7 @@ namespace GeletaApp
                         pranesimas.IsVisible = true;
                         BouquetsList.ItemsSource = null;
                     }
-                    
+
                 }
             }
         }

@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using GeletaApp.Logic;
+﻿using GeletaApp.Logic;
 using Rg.Plugins.Popup.Services;
 using SQLite;
+using System;
+using System.Linq;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -227,7 +224,7 @@ namespace GeletaApp.Model
                                 vardasDB = user.Name;
                                 numerisDB = user.Phone_number;
                                 pastKodasDB = user.Postal_code;
-                               // nuolaidaDB = user[0].Discount_code;
+                                // nuolaidaDB = user[0].Discount_code;
                                 addressDB = user.Address;
                                 miestDB = user.City;
 

@@ -1,9 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using GeletaApp.Logic;
+﻿using GeletaApp.Logic;
 using GeletaApp.Model;
 using Rg.Plugins.Popup.Services;
 using SQLite;
+using System;
+using System.Collections.Generic;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -32,7 +32,7 @@ namespace GeletaApp
             address_cp.HeightRequest = xamarinHeight;
             address_cp.WidthRequest = xamarinWidth;
             customMenu.Padding = new Thickness(xamarinWidth * 3.24 / 100, 0, xamarinWidth * 3.24 / 100, xamarinHeight * 0.885 / 100);
-           // virsutineJuosta.HeightRequest = xamarinHeight * 10.416 / 100;
+            // virsutineJuosta.HeightRequest = xamarinHeight * 10.416 / 100;
             //virsutineJuosta.Padding = new Thickness(xamarinWidth * 3.24 / 100, 0, xamarinWidth * 3.24 / 100, 0);
             BackImgButton.WidthRequest = xamarinWidth * 6.85185 / 100;
             adr_m_stc.Padding = new Thickness(xamarinWidth * 3.24 / 100, xamarinHeight * 2.03 / 100, xamarinWidth * 3.24 / 100, xamarinHeight * 0.885416 / 100);
@@ -60,13 +60,13 @@ namespace GeletaApp
             //pagrAdresas.Padding = new Thickness(xamarinWidth * 3.24 / 100, 0, 0, 0);
             //redAdresa.Padding = new Thickness(0, 0, xamarinWidth * 3.24 / 100, 0);
 
-           // prideti_adresa.HeightRequest = xamarinHeight * 6.61458 / 100;
+            // prideti_adresa.HeightRequest = xamarinHeight * 6.61458 / 100;
 
             adresai.Padding = new Thickness(xamarinWidth * 8.8888 / 100, 0, 0, 0);
 
             List<UserAddressPost> addressList = new List<UserAddressPost>();
             List<UserAddress> addressListToDisplay = new List<UserAddress>();
-            
+
             using (SQLiteConnection conn = new SQLiteConnection(App.DatabaseLocation))
             {
                 //conn.CreateTable<UserAddressPost>();
@@ -74,16 +74,17 @@ namespace GeletaApp
                 conn.CreateTable<UserAddressPost>();
                 conn.CreateTable<UserPost>();
                 var userAddress = conn.Table<UserPost>().First();
-                UserAddress address = new UserAddress() {
+                UserAddress address = new UserAddress()
+                {
                     id = 0,
                     address = userAddress.Address,
-                city = userAddress.City,
-                name = userAddress.Name,
-                phone_number = userAddress.Phone_number.ToString(),
-                postal_code = userAddress.Postal_code.ToString(),
-                isDefault = true
-            };
-                
+                    city = userAddress.City,
+                    name = userAddress.Name,
+                    phone_number = userAddress.Phone_number.ToString(),
+                    postal_code = userAddress.Postal_code.ToString(),
+                    isDefault = true
+                };
+
 
                 addressListToDisplay.Add(address);
 
@@ -91,29 +92,29 @@ namespace GeletaApp
 
 
                 int count = addressList.Count;
-                if(count > 0)
+                if (count > 0)
                 {
                     for (int i = 0; i < count; i++)
-                {
-                    UserAddress address2 = new UserAddress()
                     {
-                        id = addressList[i].Id,
-                    address = addressList[i].Address,
-                    city = addressList[i].City,
-                    name = addressList[i].Name,
-                    phone_number = addressList[i].Phone_number.ToString(),
-                    postal_code = addressList[i].Postal_code.ToString(),
-                    isDefault = false
+                        UserAddress address2 = new UserAddress()
+                        {
+                            id = addressList[i].Id,
+                            address = addressList[i].Address,
+                            city = addressList[i].City,
+                            name = addressList[i].Name,
+                            phone_number = addressList[i].Phone_number.ToString(),
+                            postal_code = addressList[i].Postal_code.ToString(),
+                            isDefault = false
 
-                };
+                        };
 
-                addressListToDisplay.Add(address2);
+                        addressListToDisplay.Add(address2);
                     }
-                listView.HeightRequest = (count+1) * listView.HeightRequest;
-                stac1.HeightRequest = (count+1) * stac1.HeightRequest;
+                    listView.HeightRequest = (count + 1) * listView.HeightRequest;
+                    stac1.HeightRequest = (count + 1) * stac1.HeightRequest;
                 }
 
-                
+
                 conn.Close();
             }
             listView.ItemsSource = addressListToDisplay;
@@ -136,7 +137,7 @@ namespace GeletaApp
             var data = sender as Label;
             var gaminu = data.Parent;
             var addressObject = gaminu.BindingContext as UserAddress;
-            
+
 
             await PopupNavigation.PushAsync(new NewAddressPage(addressObject));
         }
@@ -144,7 +145,7 @@ namespace GeletaApp
         [Obsolete]
         private async void btnPopupButton_Clicked(object sender, EventArgs e)
         {
-           
+
             await PopupNavigation.PushAsync(new NewAddressPage());
         }
         private async void deleteImg_Clicked(object sender, EventArgs e)
@@ -157,7 +158,7 @@ namespace GeletaApp
                 var pagaminau = gaminu.BindingContext as UserAddress;
                 int id = pagaminau.id;
                 string response = await UserAuth.DeleteUserAddress(id);
-                if(response == "Pavyko")
+                if (response == "Pavyko")
                 {
                     using (SQLiteConnection conn = new SQLiteConnection(App.DatabaseLocation))
                     {
@@ -173,7 +174,7 @@ namespace GeletaApp
                     await DisplayAlert("Klaida", "Įvyko klaida", "Uždaryti");
                 }
 
-               
+
             }
         }
 

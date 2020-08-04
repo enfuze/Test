@@ -1,4 +1,8 @@
-﻿using System;
+﻿using GeletaApp.Logic;
+using GeletaApp.Model;
+using Rg.Plugins.Popup.Services;
+using SQLite;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
@@ -8,14 +12,9 @@ using System.Reactive.Disposables;
 using System.Reactive.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using GeletaApp.Logic;
-using GeletaApp.Model;
-using Rg.Plugins.Popup.Services;
-using SQLite;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using System.Reflection;
 
 namespace GeletaApp
 {

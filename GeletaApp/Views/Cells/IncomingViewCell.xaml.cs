@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using GeletaApp.ViewModels;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 

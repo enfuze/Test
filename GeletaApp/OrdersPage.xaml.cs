@@ -1,6 +1,5 @@
 ﻿using GeletaApp.Logic;
 using System;
-using System.Diagnostics;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -29,7 +28,7 @@ namespace GeletaApp
 
             //Virsutines juostos atitraukimai
             orders_st.Padding = new Thickness(xamarinWidth * 3.24 / 100, xamarinHeight * 2.03 / 100, xamarinWidth * 3.24 / 100, xamarinHeight * 0.885416 / 100);
-            
+
             //Contento atitraukimas
             frame1.Margin = new Thickness(xamarinWidth * -3.24 / 100, xamarinHeight * 6.35 / 100, xamarinWidth * -3.24 / 100, 0);
 
@@ -38,7 +37,7 @@ namespace GeletaApp
             orders_cp.HeightRequest = xamarinHeight;
             orders_cp.WidthRequest = xamarinWidth;
             //customMenu.Padding = new Thickness(xamarinWidth * 3.24 / 100, 0, xamarinWidth * 3.24 / 100, xamarinHeight * 0.885 / 100);
-           // virsutineJuosta.HeightRequest = xamarinHeight * 10.4166/ 100;
+            // virsutineJuosta.HeightRequest = xamarinHeight * 10.4166/ 100;
             //virsutineJuosta.Padding = new Thickness(xamarinWidth * 3.24 / 100, 0, 0, xamarinHeight * 4.3229 / 100);
             uzsakymai.Padding = new Thickness(xamarinWidth * 8.888 / 100, 0, 0, 0);
             BackImgButton.WidthRequest = xamarinWidth * 6.8518 / 100;

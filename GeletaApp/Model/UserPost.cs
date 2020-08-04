@@ -1,13 +1,10 @@
 ﻿using SQLite;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace GeletaApp.Model
 {
     public class UserPost
     {
-        
+
         public string Token { get; set; }
         [PrimaryKey]
         public string Email { get; set; }

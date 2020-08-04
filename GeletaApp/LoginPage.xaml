@@ -9,40 +9,69 @@
     x:Class="GeletaApp.LoginPage"
     BackgroundColor="White"
     x:Name="loginCP">
-    
-    <ScrollView Orientation="Vertical">
-        <StackLayout VerticalOptions="Fill" x:Name="loginST">
-
+    <StackLayout VerticalOptions="Fill" x:Name="loginST">
+        <Grid x:Name="grid">
+            
+            <Grid.RowDefinitions>
+                <RowDefinition Height="7*"/>
+                <RowDefinition Height="1.5*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="1.7*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            
             <Image 
+                Grid.Row="0"
+                Grid.ColumnSpan="2"
                 x:Name="logas"
                 Source="naujaslogo.png"/>
-            <Label x:Name="prisijungti_naudojant"
+
+            <Label 
+                Grid.Row="1"
+                Grid.ColumnSpan="2"
+                x:Name="prisijungti_naudojant"
                 Text="PRISIJUNGTI NAUDOJANT"
                 TextColor="Black"
                 CharacterSpacing="1.13" 
                 HorizontalTextAlignment="Center"
+                VerticalTextAlignment="End"
                 FontFamily="segoeCustom"/>
             <Label 
+                Grid.Row="2"
+                Grid.ColumnSpan="2"
                 Text="El. paštas" 
                 x:Name="el_pastas" 
                 VerticalTextAlignment="End"
                 TextColor="Black" 
                 FontFamily="segoeCustom"/>
             <local:MyEntry 
+                Grid.Row="3"
+                Grid.ColumnSpan="2"
                 x:Name="emailEntry" 
                 Style="{StaticResource email_entry}" 
                 FontFamily="segoeCustom"/>
             <Label 
+                Grid.Row="4"
+                Grid.ColumnSpan="2"
                 Text="Slaptažodis" 
                 VerticalTextAlignment="End"
                 TextColor="Black" 
                 x:Name="slaptazodisLabel"
                 FontFamily="segoeCustom"/>
             <local:MyEntry 
+                Grid.Row="5"
+                Grid.ColumnSpan="2"
                 x:Name="passwordEntry" 
                 Style="{StaticResource password_entry}" 
                 FontFamily="segoeCustom"/>
             <Label 
+                Grid.Row="6"
+                Grid.ColumnSpan="2"
                 Text="Pamiršau slaptažodį" 
                 TextColor="Black" 
                 VerticalTextAlignment="End"
@@ -54,42 +83,43 @@
                 </Label.GestureRecognizers>
             </Label>
 
-            <Label 
+            <!--<Label 
+                Grid.Row="8"
+                Grid.ColumnSpan="2"
                 Text="ARBA" 
                 x:Name="arbaLabel" 
                 TextColor="Black"
                 HorizontalTextAlignment="Center"
-                FontFamily="segoeCustom"/>
+                FontFamily="segoeCustom"/>-->
             
-            <Grid x:Name="grid">
-                <ImageButton 
-                    x:Name="google"
-                    Grid.Column="0" 
-                    Source="google.png" 
-                    BackgroundColor="White" 
-                    Aspect="AspectFit" 
-                    HorizontalOptions="Start"/>
-                <ImageButton 
-                    x:Name="facebook"
-                    Grid.Column="1"
-                    Source="Facebook.png" 
-                    BackgroundColor="White" 
-                    Aspect="AspectFit" 
-                    HorizontalOptions="End"/>
-            </Grid>
-
-            <Frame x:Name="frame1" BackgroundColor="{StaticResource pilka}" Padding="1">
+            <ImageButton 
+                Grid.Row="7"
+                x:Name="google"
+                Grid.Column="0" 
+                Source="google.png" 
+                BackgroundColor="White" 
+                Aspect="AspectFit" 
+                HorizontalOptions="End"/>
+            <ImageButton 
+                x:Name="facebook"
+                Grid.Row="7"
+                Grid.Column="1"
+                Source="Facebook.png" 
+                BackgroundColor="White" 
+                Aspect="AspectFit" 
+                HorizontalOptions="Start"/>
                 <Button 
-                    x:Name="LoginButton" 
-                    Text="Prisijungti" 
-                    HorizontalOptions="FillAndExpand"
-                    Clicked="LoginButton_Clicked"
-                    Style="{StaticResource registerButton}"
-                    FontFamily="segoeCustom"/>
-            </Frame>
-
-            <Frame BackgroundColor="{StaticResource pilka}" Padding="1" x:Name="frame2">
+                Grid.Row="8"
+                Grid.ColumnSpan="2"
+                x:Name="LoginButton" 
+                Text="Prisijungti" 
+                HorizontalOptions="FillAndExpand"
+                Clicked="LoginButton_Clicked"
+                Style="{StaticResource normalButton}"
+                FontFamily="segoeCustom"/>
+            <Frame Grid.Row="9" VerticalOptions="EndAndExpand" Padding="1" >
                 <Button 
+                    
                     HorizontalOptions="FillAndExpand" 
                     BackgroundColor="White"
                     x:Name="RegisterButton"
@@ -98,6 +128,7 @@
                     Clicked="RegisterButton_Clicked" 
                     FontFamily="segoeCustom"/>
             </Frame>
-        </StackLayout> 
-    </ScrollView>
+        </Grid>
+
+    </StackLayout> 
 </ContentPage>
