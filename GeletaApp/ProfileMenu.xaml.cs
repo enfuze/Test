@@ -1,9 +1,8 @@
-﻿using System;
-using System.Diagnostics;
-using GeletaApp.Logic;
+﻿using GeletaApp.Logic;
 using GeletaApp.Model;
 using Rg.Plugins.Popup.Services;
 using SQLite;
+using System;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;

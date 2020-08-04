@@ -1,6 +1,5 @@
 ﻿using GeletaApp.Logic;
 using System;
-using System.Diagnostics;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;

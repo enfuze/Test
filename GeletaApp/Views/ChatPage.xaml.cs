@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Windows.Input;
-using GeletaApp.Logic;
+﻿using GeletaApp.Logic;
 using GeletaApp.ViewModels;
 using GeletaApp.Views.Cells;
+using System;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 
@@ -37,14 +34,14 @@ namespace GeletaApp.Views
             BackImgButton1.WidthRequest = xamarinWidth * 6.85 / 100;
             susirasinejimas.Padding = new Thickness(xamarinWidth * 8.888 / 100, 0, 0, 0);
             customMenu.Padding = new Thickness(xamarinWidth * 3.24 / 100, 0, xamarinWidth * 3.24 / 100, xamarinHeight * 0.885 / 100);
-          /* Device.StartTimer(TimeSpan.FromSeconds(1), () => {
-                Device.BeginInvokeOnMainThread(() => laikas.Text = DateTime.Now.ToString(@"HH\:mm"));
-                return true;
-            });*/
+            /* Device.StartTimer(TimeSpan.FromSeconds(1), () => {
+                  Device.BeginInvokeOnMainThread(() => laikas.Text = DateTime.Now.ToString(@"HH\:mm"));
+                  return true;
+              });*/
             gridas.WidthRequest = xamarinWidth;
             gridas.Padding = new Thickness(xamarinWidth * 3.24 / 100, 0, xamarinWidth * 3.24 / 100, 0);
-            gridas.HeightRequest = xamarinHeight *65/100;
-         //   zinute.FontSize = xamarinHeight * 2.6 / 100;
+            gridas.HeightRequest = xamarinHeight * 65 / 100;
+            //   zinute.FontSize = xamarinHeight * 2.6 / 100;
             //chatFrame.Padding = new Thickness(xamarinWidth * (35 * 100 / width) / 100, 0, xamarinWidth * (35 * 100 / width) / 100, 0);
         }
         private async void BackImgButton_Clicked(object sender, EventArgs e)
@@ -82,7 +79,7 @@ namespace GeletaApp.Views
 
             }
         }
-       
+
         public void OnListTapped(object sender, ItemTappedEventArgs e)
         {
             chatInput.UnFocusEntry();

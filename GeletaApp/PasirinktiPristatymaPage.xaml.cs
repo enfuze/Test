@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using GeletaApp.Helpers;
+﻿using GeletaApp.Helpers;
 using Rg.Plugins.Popup.Services;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -35,7 +31,7 @@ namespace GeletaApp
         {
             var activity = Android.App.Application.Context;
             CallbackEvent?.Invoke(address_product, EventArgs.Empty);
-            
+
             switch (address_product)
             {
                 case "maxima":

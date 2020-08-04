@@ -1,8 +1,8 @@
-﻿using System;
+﻿using GeletaApp.Logic;
+using Rg.Plugins.Popup.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using GeletaApp.Logic;
-using Rg.Plugins.Popup.Services;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -12,7 +12,7 @@ namespace GeletaApp.Model
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class PaieskosJuosta : Frame
     {
-   
+
         public PaieskosJuosta()
         {
             // Get Metrics
@@ -38,16 +38,16 @@ namespace GeletaApp.Model
             NavigationPage.SetHasNavigationBar(this, false);
 
             InitializeComponent();
-           // paieskos_juostos_frame.HeightRequest = xamarinHeight * (62 * 100 / height) / 100;
-            paieskos_juostos_frame.Padding = new Thickness(0, 0, 0, xamarinHeight* 3.645 / 100);
+            // paieskos_juostos_frame.HeightRequest = xamarinHeight * (62 * 100 / height) / 100;
+            paieskos_juostos_frame.Padding = new Thickness(0, 0, 0, xamarinHeight * 3.645 / 100);
             paieskos_stack.HeightRequest = xamarinHeight * 3.645 / 100;
             paieska_st.WidthRequest = xamarinWidth * 73.611 / 100;
-          //  paieska.Padding = new Thickness(xamarinWidth * (-75 * 100 / width) / 100, xamarinHeight * (25 * 100 / height) / 100, 0, xamarinHeight * (25 * 100 / height) / 100);
-       //     shop_img.HeightRequest = xamarinHeight * (70 * 100 / height) / 100;
+            //  paieska.Padding = new Thickness(xamarinWidth * (-75 * 100 / width) / 100, xamarinHeight * (25 * 100 / height) / 100, 0, xamarinHeight * (25 * 100 / height) / 100);
+            //     shop_img.HeightRequest = xamarinHeight * (70 * 100 / height) / 100;
             funnel.HeightRequest = xamarinHeight * 3.229 / 100;
             paieskos_juostos_entry.WidthRequest = xamarinWidth * 60 / 100;
             paieskos_linija.WidthRequest = xamarinWidth * 60 / 100;
-            paieskos_st.WidthRequest = xamarinWidth * 60  / 100;
+            paieskos_st.WidthRequest = xamarinWidth * 60 / 100;
             paieskos_juostos_entry.HeightRequest = xamarinHeight * 3.229 / 100;
             paieska.FontSize = xamarinHeight * 1.84 / 100;
             paieskos_juostos_entry.FontSize = xamarinHeight * 1.736 / 100;

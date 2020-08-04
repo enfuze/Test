@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace GeletaApp.Model
+﻿namespace GeletaApp.Model
 {
     public class ProductObject
     {
@@ -11,7 +7,7 @@ namespace GeletaApp.Model
         public double Product_price { get; set; }
         public int Product_id { get; set; }
         public string Product_type { get; set; }
-        public ProductObject() 
+        public ProductObject()
         {
 
         }

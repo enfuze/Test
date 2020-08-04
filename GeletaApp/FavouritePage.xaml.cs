@@ -1,10 +1,8 @@
 ﻿
 using GeletaApp.Logic;
 using GeletaApp.Model;
-using Rg.Plugins.Popup.Services;
 using SQLite;
 using System;
-using System.Diagnostics;
 using System.Linq;
 using Xamarin.Essentials;
 using Xamarin.Forms;
@@ -59,7 +57,7 @@ namespace GeletaApp
             {
                 pranesimas.IsVisible = true;
             }
-            
+
         }
         [Obsolete]
         void TapGestureRecognizer_Tapped(object sender, EventArgs e)

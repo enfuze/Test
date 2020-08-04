@@ -1,6 +1,5 @@
 ﻿using GeletaApp.Model;
 using Newtonsoft.Json;
-using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Net.Http.Headers;
@@ -83,7 +82,7 @@ namespace GeletaApp.Logic
 
                 if (userRoot.userToken != null)
                 {
-                   // user = userRoot.user_data as User;
+                    // user = userRoot.user_data as User;
                     userx.Add("Token");
                     userx.Add(userRoot.userToken);
                 }
@@ -127,7 +126,7 @@ namespace GeletaApp.Logic
                 var userRoot = JsonConvert.DeserializeObject<DataRoot>(json);
                 var result = userRoot.message;
                 rez = result;
-               
+
             }
             return rez;
         }
@@ -193,7 +192,7 @@ namespace GeletaApp.Logic
                 var response = await client.PostAsync(url, jsonData);
                 var json = await response.Content.ReadAsStringAsync();
                 var userRoot = JsonConvert.DeserializeObject<DataRoot>(json);
-                if(userRoot.last_id != null)
+                if (userRoot.last_id != null)
                 {
                     rez.Add("Id");
                     rez.Add(userRoot.last_id);

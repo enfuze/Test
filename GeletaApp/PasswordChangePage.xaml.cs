@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using GeletaApp.Logic;
+﻿using GeletaApp.Logic;
 using Rg.Plugins.Popup.Services;
-using Xamarin.Forms;
+using System;
 using Xamarin.Forms.Xaml;
 
 namespace GeletaApp
@@ -31,10 +26,11 @@ namespace GeletaApp
             if (oldPassword.Equals(newPassword))
             {
                 await App.Current.MainPage.DisplayAlert("Klaida", "Naujas ir senas slaptažodžiai sutampa", "Uždaryti");
-            }else if (repeatPassword.Equals(newPassword))
+            }
+            else if (repeatPassword.Equals(newPassword))
             {
                 string result = await UserAuth.ChangePass(oldPassword, newPassword);
-                if(result != "")
+                if (result != "")
                 {
                     await App.Current.MainPage.DisplayAlert("Klaida", result, "Uždaryti");
                 }

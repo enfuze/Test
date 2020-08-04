@@ -1,23 +1,21 @@
-﻿using System;
-using System.Threading.Tasks;
-using Android.App;
-using Android.Graphics;
+﻿using Android.App;
 using Android.Widget;
 using GeletaApp.Droid;
+using System;
+using System.Threading.Tasks;
 using Xamarin.Forms;
-using Xamarin.Forms.StyleSheets;
 
 [assembly: Dependency(typeof(DisplayAlertService))]
 namespace GeletaApp.Droid
 {
-    public static class DisplayAlertService 
+    public static class DisplayAlertService
     {
         public static async Task<bool> ShowAlert(string title, string content, string okButton, Action callback)
         {
             return await Task.Run(() => Alert(title, content, okButton, callback));
         }
 
-        public static async Task<bool> ShowAlertConfirm(string title, string content, string confirmButton, string cancelButton,  Action<bool> callback)
+        public static async Task<bool> ShowAlertConfirm(string title, string content, string confirmButton, string cancelButton, Action<bool> callback)
         {
             return await Task.Run(() => AlertConfirm(title, content, confirmButton, cancelButton, callback));
         }
@@ -68,10 +66,10 @@ namespace GeletaApp.Droid
         {
             try
             {
-                
+
                 var resources = dialog.Context.Resources;
-               // var color = dialog.Context.Resources.GetColor(Resource.Color.dialog_textcolor);
-               // var background = dialog.Context.Resources.GetColor(Resource.Color.dialog_background);
+                // var color = dialog.Context.Resources.GetColor(Resource.Color.dialog_textcolor);
+                // var background = dialog.Context.Resources.GetColor(Resource.Color.dialog_background);
 
                 var alertTitleId = resources.GetIdentifier("alertTitle", "id", "android");
                 var alertTitle = (TextView)dialog.Window.DecorView.FindViewById(alertTitleId);
@@ -80,7 +78,7 @@ namespace GeletaApp.Droid
                 //alertTitle.Font
                 var titleDividerId = resources.GetIdentifier("titleDivider", "id", "android");
                 var titleDivider = dialog.Window.DecorView.FindViewById(titleDividerId);
-                
+
                 //titleDivider.SetBackgroundColor(background); // change divider color
             }
             catch

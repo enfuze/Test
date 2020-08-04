@@ -9,5 +9,5 @@ namespace GeletaApp.Droid
         Task<bool> ShowAlertConfirm(string message, string title, string confirmButton, string cancelButton, Action<bool> callback);
 
     }
-    
+
 }

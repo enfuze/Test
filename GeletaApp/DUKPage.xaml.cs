@@ -1,6 +1,6 @@
-﻿using System;
-using Expandable;
+﻿using Expandable;
 using GeletaApp.Logic;
+using System;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -32,12 +32,12 @@ namespace GeletaApp
             duk_st.Padding = new Thickness(xamarinWidth * 3.24 / 100, xamarinHeight * 2.03 / 100, xamarinWidth * 3.24 / 100, xamarinHeight * 0.885 / 100);
             // virsutineJuosta.HeightRequest = xamarinHeight * 10.416 / 100;
             aprasymas.Padding = new Thickness(xamarinWidth * 3.24 / 100, xamarinHeight * 4.166 / 100, 0, xamarinHeight * 4.6875 / 100);
-            stack1.Padding = new Thickness(xamarinWidth * 3.24 / 100, xamarinHeight * 0.5208 / 100, xamarinWidth * 3.24 / 100, xamarinHeight * 1.04166/ 100);
+            stack1.Padding = new Thickness(xamarinWidth * 3.24 / 100, xamarinHeight * 0.5208 / 100, xamarinWidth * 3.24 / 100, xamarinHeight * 1.04166 / 100);
             stack2.Padding = new Thickness(xamarinWidth * 3.24 / 100, xamarinHeight * 0.5208 / 100, xamarinWidth * 3.24 / 100, xamarinHeight * 1.04166 / 100);
             stack3.Padding = new Thickness(xamarinWidth * 3.24 / 100, xamarinHeight * 0.5208 / 100, xamarinWidth * 3.24 / 100, xamarinHeight * 1.04166 / 100);
             stack4.Padding = new Thickness(xamarinWidth * 3.24 / 100, xamarinHeight * 0.5208 / 100, xamarinWidth * 3.24 / 100, xamarinHeight * 1.04166 / 100);
             stack5.Padding = new Thickness(xamarinWidth * 3.24 / 100, xamarinHeight * 0.5208 / 100, xamarinWidth * 3.24 / 100, xamarinHeight * 1.04166 / 100);
-            
+
 
             //aprasymas.Margin = new Thickness(xamarinWidth * 3.24 / 100, xamarinHeight * 4.166 / 100, 0, xamarinHeight * 4.6875 / 100);
             /*stack1.Margin = new Thickness(xamarinWidth * -3.24 / 100, 0, xamarinWidth * -3.24 / 100, 0);
@@ -53,7 +53,7 @@ namespace GeletaApp
 
 
             //  virsutineJuosta.Padding = new Thickness(xamarinWidth * 3.24 / 100, 0, 0, 0);
-              duk.Padding = new Thickness(xamarinWidth * 8.888 / 100, 0, 0, 0);
+            duk.Padding = new Thickness(xamarinWidth * 8.888 / 100, 0, 0, 0);
         }
 
         private async void BackImgButton_Clicked(object sender, EventArgs e)
@@ -80,7 +80,7 @@ namespace GeletaApp
             expandableView3.StatusChanged += OnStatusChanged;
             expandableView4.StatusChanged += OnStatusChanged;
             expandableView5.StatusChanged += OnStatusChanged;
-           
+
         }
 
 
@@ -92,7 +92,7 @@ namespace GeletaApp
             expandableView3.StatusChanged -= OnStatusChanged;
             expandableView4.StatusChanged -= OnStatusChanged;
             expandableView5.StatusChanged -= OnStatusChanged;
-           
+
         }
 
         private async void OnStatusChanged(object sender, StatusChangedEventArgs e)
@@ -142,7 +142,7 @@ namespace GeletaApp
             {
                 await arrow5.RotateTo(0, 200, Easing.CubicInOut);
             }
-           
+
         }
 
         private async void eiti_i_adresai_Clicked(object sender, EventArgs e)

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace GeletaApp.Model
+﻿namespace GeletaApp.Model
 {
     public class Home_Stuff
     {

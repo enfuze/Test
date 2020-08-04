@@ -7,7 +7,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using System.Transactions;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -761,7 +760,7 @@ namespace GeletaApp
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            
+
             expandableView.StatusChanged += OnStatusChanged;
 
             expandableView2.StatusChanged += OnStatusChanged;
@@ -781,7 +780,7 @@ namespace GeletaApp
 
         private async void OnStatusChanged(object sender, StatusChangedEventArgs e)
         {
-            if(expandableView.Status == ExpandStatus.Expanding)
+            if (expandableView.Status == ExpandStatus.Expanding)
             {
                 expandableView.IsExpanded = true;
                 expandableView2.IsExpanded = false;
@@ -1158,18 +1157,18 @@ namespace GeletaApp
             List<Page> li = Navigation.NavigationStack.ToList();
             Page last = li.ElementAt(li.Count - 1);
             var page = last.ToString();
-            
+
             if (page.Equals("GeletaApp.BouquetsPage"))
             {
-               await  App.Current.MainPage.Navigation.PushAsync(new BouquetsPage());
+                await App.Current.MainPage.Navigation.PushAsync(new BouquetsPage());
             }
             else if (page.Equals("GeletaApp.FlowersPage"))
             {
-               await  App.Current.MainPage.Navigation.PushAsync(new FlowersPage());
+                await App.Current.MainPage.Navigation.PushAsync(new FlowersPage());
             }
             else if (page.Equals("GeletaApp.OtherGoodsPage"))
             {
-               await  App.Current.MainPage.Navigation.PushAsync(new OtherGoodsPage());
+                await App.Current.MainPage.Navigation.PushAsync(new OtherGoodsPage());
             }
             await PopupNavigation.Instance.PopAsync();
         }

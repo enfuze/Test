@@ -1,10 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using GeletaApp.Model;
+using Newtonsoft.Json;
+using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
-using GeletaApp.Model;
-using Newtonsoft.Json;
-using SQLite;
 
 namespace GeletaApp.Logic
 {
@@ -259,7 +258,7 @@ namespace GeletaApp.Logic
             //------
             using (HttpClient client = new HttpClient(handler))
             {
-                
+
                 var response = await client.GetAsync(url);
                 var json = await response.Content.ReadAsStringAsync();
                 var dataRoot = JsonConvert.DeserializeObject<DataRoot>(json);

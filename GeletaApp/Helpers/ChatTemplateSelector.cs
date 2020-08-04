@@ -1,5 +1,4 @@
-﻿using GeletaApp.Model;
-using GeletaApp.Models;
+﻿using GeletaApp.Models;
 using GeletaApp.Views.Cells;
 using Xamarin.Forms;
 
@@ -22,8 +21,8 @@ namespace GeletaApp.Helpers
             if (messageVm == null)
                 return null;
 
-          
-            return (messageVm.User == App.User)? outgoingDataTemplate: incomingDataTemplate;
+
+            return (messageVm.User == App.User) ? outgoingDataTemplate : incomingDataTemplate;
         }
 
     }

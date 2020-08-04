@@ -1,8 +1,4 @@
 ﻿using SQLite;
-using SQLitePCL;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace GeletaApp.Model
 {
@@ -18,7 +14,8 @@ namespace GeletaApp.Model
     }
     public class CartItemPost
     {
-        [PrimaryKey][AutoIncrement]
+        [PrimaryKey]
+        [AutoIncrement]
         public int Id { get; set; }
         public int Flower_id { get; set; }
         public int Bouquet_id { get; set; }

@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.Design;
-using System.Diagnostics;
-using System.Linq;
-using GeletaApp;
-using GeletaApp.Logic;
+﻿using GeletaApp.Logic;
 using GeletaApp.Model;
-using SQLite;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using Xamarin.Essentials;
 using Xamarin.Forms;
-using Xamarin.Forms.PlatformConfiguration;
 
 namespace GeletaApp
 {
@@ -35,7 +30,7 @@ namespace GeletaApp
             // Screen density
             paieska_main_st.WidthRequest = xamarinWidth * 73.61 / 100;
             shop_img.HeightRequest = xamarinHeight * 3.229 / 100;
-            main_cp.Padding = new Thickness(0, xamarinHeight * 3.125 / 100, 0, xamarinHeight * 0.885/ 100);
+            main_cp.Padding = new Thickness(0, xamarinHeight * 3.125 / 100, 0, xamarinHeight * 0.885 / 100);
             virsutinis_st.Padding = new Thickness(xamarinWidth * 3.24 / 100, 0, xamarinWidth * 3.24 / 100, 0);
             paieskos_juostos_entry.HeightRequest = xamarinHeight * 5.15625 / 100;
             iconImage.HeightRequest = xamarinHeight * 5.3125 / 100;
@@ -45,7 +40,7 @@ namespace GeletaApp
             main_label.HeightRequest = xamarinHeight * 15.625 / 100;
             main_label2.Padding = new Thickness(xamarinWidth * 3.24 / 100, xamarinHeight * 3.489 / 100, xamarinWidth * 3.24 / 100, xamarinHeight * 1.5625 / 100);
             main_label2.HeightRequest = xamarinHeight * 15.625 / 100;
-            main_label3.Padding = new Thickness(xamarinWidth* 3.24 / 100, xamarinHeight * 3.489 / 100, xamarinWidth * 3.24 / 100, xamarinHeight * 1.5625 / 100);
+            main_label3.Padding = new Thickness(xamarinWidth * 3.24 / 100, xamarinHeight * 3.489 / 100, xamarinWidth * 3.24 / 100, xamarinHeight * 1.5625 / 100);
             main_label3.HeightRequest = xamarinHeight * 15.625 / 100;
             main_label.FontSize = xamarinHeight * 2.60 / 100;
             main_label2.FontSize = xamarinHeight * 2.60 / 100;
@@ -54,10 +49,10 @@ namespace GeletaApp
             paieskos_linija.WidthRequest = xamarinWidth * 57.407 / 100;
             paieskos_juostos_entry.WidthRequest = xamarinWidth * 57.407 / 100;
             image1.WidthRequest = xamarinWidth;
-           // image1.HeightRequest = xamarinHeight * 3.64583 / 100;
+            // image1.HeightRequest = xamarinHeight * 3.64583 / 100;
             image3.WidthRequest = xamarinWidth;
-         //   image3.HeightRequest = xamarinHeight * 3.6458 / 100;
-         //   image2.HeightRequest = xamarinHeight * 3.6458 / 100;
+            //   image3.HeightRequest = xamarinHeight * 3.6458 / 100;
+            //   image2.HeightRequest = xamarinHeight * 3.6458 / 100;
             image2.WidthRequest = xamarinWidth;
             customMenu.Padding = new Thickness(xamarinWidth * 3.24 / 100, 0, xamarinWidth * 3.24 / 100, 0);
 
@@ -79,25 +74,25 @@ namespace GeletaApp
                 conn.Close();
             }*/
 
-                    //Custominis alertas
+            //Custominis alertas
 
 
-                    /*
-                    DependencyService.Get<IBackgroundDependency>().ExecuteCommand("Click OK to navigate", "Title", "OK",
-                            () => { this.Navigation.PushAsync(new BouquetsPage()); });
-                    */
+            /*
+            DependencyService.Get<IBackgroundDependency>().ExecuteCommand("Click OK to navigate", "Title", "OK",
+                    () => { this.Navigation.PushAsync(new BouquetsPage()); });
+            */
 
 
 
 
 
-                    // --- Jeigu nori daryt kažką kai pagauna kad esi NavStack'o pabaigoj
-                    //Page currentPage = Navigation.NavigationStack.LastOrDefault();
-                    //if (currentPage == this)
-                    //{
-                    //}
-                    // ----------------------------------------------------
-                }
+            // --- Jeigu nori daryt kažką kai pagauna kad esi NavStack'o pabaigoj
+            //Page currentPage = Navigation.NavigationStack.LastOrDefault();
+            //if (currentPage == this)
+            //{
+            //}
+            // ----------------------------------------------------
+        }
 
         private void stepper_ValueChanged(object sender, ValueChangedEventArgs e)
         {
@@ -119,7 +114,7 @@ namespace GeletaApp
                 var testas = Functions.Search(searchKey);
                 await App.Current.MainPage.Navigation.PushAsync(new SearchResultPage(testas));
             }
-            
+
         }
         protected override bool OnBackButtonPressed()
         {

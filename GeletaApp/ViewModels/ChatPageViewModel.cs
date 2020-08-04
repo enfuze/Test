@@ -1,10 +1,8 @@
-﻿using System;
+﻿using GeletaApp.Models;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Windows.Input;
-using GeletaApp.Model;
-using GeletaApp.Models;
 using Xamarin.Forms;
 
 namespace GeletaApp.ViewModels
@@ -26,37 +24,38 @@ namespace GeletaApp.ViewModels
         public ChatPageViewModel()
         {
             Messages.Insert(0, new Message() { Text = "Sveiki atvykę į Gėlėta susirašinėjimus" });
-            Messages.Insert(0, new Message() { Text = "Sveiki", User = App.User});
+            Messages.Insert(0, new Message() { Text = "Sveiki", User = App.User });
 
             MessageAppearingCommand = new Command<Message>(OnMessageAppearing);
             MessageDisappearingCommand = new Command<Message>(OnMessageDisappearing);
 
             OnSendCommand = new Command(() =>
             {
-                if(!string.IsNullOrEmpty(TextToSend)){
+                if (!string.IsNullOrEmpty(TextToSend))
+                {
                     Messages.Insert(0, new Message() { Text = TextToSend, User = App.User });
                     TextToSend = string.Empty;
                 }
-               
+
             });
 
             //Code to simulate reveing a new message procces
-    /*    Device.StartTimer(TimeSpan.FromSeconds(3), () =>
-            {
-                if (LastMessageVisible)
-                {
-                    Messages.Insert(0, new Message(){ Text = "New message test" , User="Mario"});
-                }
-                else
-                {
-                    DelayedMessages.Enqueue(new Message() { Text = "New message test" , User = "Mario"});
-                    PendingMessageCount++;
-                }
-                return true;
-            });
-      */ 
-          
-           
+            /*    Device.StartTimer(TimeSpan.FromSeconds(3), () =>
+                    {
+                        if (LastMessageVisible)
+                        {
+                            Messages.Insert(0, new Message(){ Text = "New message test" , User="Mario"});
+                        }
+                        else
+                        {
+                            DelayedMessages.Enqueue(new Message() { Text = "New message test" , User = "Mario"});
+                            PendingMessageCount++;
+                        }
+                        return true;
+                    });
+              */
+
+
         }
 
         void OnMessageAppearing(Message message)
@@ -72,7 +71,7 @@ namespace GeletaApp.ViewModels
                     }
                     ShowScrollTap = false;
                     LastMessageVisible = true;
-                    PendingMessageCount = 0; 
+                    PendingMessageCount = 0;
                 });
             }
         }

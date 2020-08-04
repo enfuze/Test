@@ -1,6 +1,6 @@
-﻿using System;
-using GeletaApp.Logic;
+﻿using GeletaApp.Logic;
 using GeletaApp.Views;
+using System;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -29,7 +29,7 @@ namespace GeletaApp
 
             susisiekime_cp.HeightRequest = xamarinHeight;
             susisiekime_cp.WidthRequest = xamarinWidth;
-            susisiekime_st.Padding = new Thickness(xamarinWidth * 3.24 / 100, xamarinHeight * 2.03 / 100, xamarinWidth * 3.24 / 100, xamarinHeight * 0.885/ 100);
+            susisiekime_st.Padding = new Thickness(xamarinWidth * 3.24 / 100, xamarinHeight * 2.03 / 100, xamarinWidth * 3.24 / 100, xamarinHeight * 0.885 / 100);
             grid1.Padding = new Thickness(xamarinWidth * 3.24 / 100, 0, xamarinWidth * 3.24 / 100, 0);
             grid2.Padding = new Thickness(xamarinWidth * 3.24 / 100, 0, xamarinWidth * 3.24 / 100, 0);
             grid1.HeightRequest = xamarinHeight * 6.5104 / 100;

@@ -1,5 +1,4 @@
-﻿using System;
-namespace GeletaApp.Models
+﻿namespace GeletaApp.Models
 {
     public class Message
     {

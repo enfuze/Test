@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Globalization;
-using System.Text;
 using Xamarin.Forms;
 
 namespace GeletaApp.Helper
@@ -10,9 +8,9 @@ namespace GeletaApp.Helper
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-           
+
             string param = System.Convert.ToString(parameter) ?? "u";
-            
+
             switch (param.ToUpper())
             {
                 case "U":
@@ -22,7 +20,7 @@ namespace GeletaApp.Helper
                 default:
                     return ((string)value);
             }
-         
+
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

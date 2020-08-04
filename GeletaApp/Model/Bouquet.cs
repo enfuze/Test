@@ -1,7 +1,4 @@
-﻿using System.Collections.Generic;
-using GeletaApp.Helpers;
-
-namespace GeletaApp.Model
+﻿namespace GeletaApp.Model
 {
     public class Bouquet
     {

@@ -1,6 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using GeletaApp.ViewModels;
+﻿using GeletaApp.ViewModels;
+using System;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 
@@ -22,12 +21,12 @@ namespace GeletaApp.Views.Partials
             // Height (in pixels)
             var height = mainDisplayInfo.Height;
             var xamarinHeight = height / mainDisplayInfo.Density;
-         //   chatTextInput.HeightRequest = xamarinHeight * 1.51 / 100;
+            //   chatTextInput.HeightRequest = xamarinHeight * 1.51 / 100;
             prideti.HeightRequest = xamarinHeight * 3 / 100;
             siusti.Padding = new Thickness(0, 0, xamarinWidth * 3.24 / 100, 0);
             //stack.HeightRequest = xamarinHeight * 4.79 / 100;
             siusti.FontSize = xamarinHeight * 2 / 100;
-            prideti.Margin = new Thickness(xamarinWidth * 3.24 / 100, 0, xamarinWidth * 12.129/ 100, 0);
+            prideti.Margin = new Thickness(xamarinWidth * 3.24 / 100, 0, xamarinWidth * 12.129 / 100, 0);
         }
         public void Handle_Completed(object sender, EventArgs e)
         {
@@ -36,7 +35,8 @@ namespace GeletaApp.Views.Partials
             chatTextInput.Text = null;
         }
 
-        public void UnFocusEntry(){
+        public void UnFocusEntry()
+        {
             chatTextInput?.Unfocus();
         }
 

@@ -1,7 +1,5 @@
 ﻿using GeletaApp.Helpers;
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace GeletaApp.Model
 {
@@ -16,7 +14,7 @@ namespace GeletaApp.Model
         public IList<Home_Stuff_Type> home_stuff_type { get; set; }
         public IList<BouquetConsist> bouquets_consist { get; set; }
         public IList<AssignedOccasions> assigned_occasions { get; set; }
-        public User user_data{ get;set; }
+        public User user_data { get; set; }
         public IList<UserAddress> user_addresses { get; set; }
         public string userToken { get; set; }
         public string message { get; set; }

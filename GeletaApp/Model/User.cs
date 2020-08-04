@@ -1,6 +1,4 @@
-﻿using SQLite;
-
-namespace GeletaApp.Model
+﻿namespace GeletaApp.Model
 {
     public class User
     {
