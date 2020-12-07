@@ -1,3 +1,2 @@
-# GeletaAppsas
+# Test
 Barbora for flowers
-Gelėtos appsas
